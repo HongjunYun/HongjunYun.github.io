@@ -20,10 +20,10 @@ jobs:
       - name: Install, build, and upload
         uses: withastro/action@v2
         # pnpm이나 yarn을 사용하신다면 아래 주석을 풀고 설정하세요.
-        # with:
-        #   path: .
-        #   node-version: 20
-        #   package-manager: npm
+        with:
+          path: .
+          node-version: 20
+          package-manager: npm
 
   deploy:
     needs: build
