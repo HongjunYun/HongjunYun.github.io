@@ -1,3 +1,5 @@
 {
-    "chatgpt.openOnStartup": true
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
