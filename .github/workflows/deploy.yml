@@ -23,13 +23,22 @@ jobs:
         with:
           version: 9
 
-      - name: Install, build, and upload
-        uses: withastro/action@v2
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: .
           node-version: 20
-          # 2. 여기를 npm에서 pnpm으로 바꿨습니다. (수정된 부분)
-          package-manager: pnpm 
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
 
   deploy:
     needs: build
