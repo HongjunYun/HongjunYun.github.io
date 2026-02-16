@@ -5,34 +5,42 @@
    ========================================================= */
 
 :root{
+  /* Paper sizes */
   --w-a4: 210mm;   --h-a4: 297mm;
   --w-letter: 215.9mm; --h-letter: 279.4mm;
 
+  /* Active paper (default = Letter) */
   --pageW: var(--w-letter);
   --pageH: var(--h-letter);
 
+  /* Print padding */
   --padX: 11mm;
   --padY: 10mm;
 
+  /* Fonts */
   --font-en: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   --font-ko: ui-sans-serif, system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", Segoe UI, Roboto, Helvetica, Arial;
 
   --text: #111214;
   --muted: #4b5563;
 
+  /* Screen-only cosmetics */
   --sheetRadius: 14px;
   --sheetShadow: 0 20px 60px rgba(0,0,0,.22);
 
+  /* Lines (screen) */
   --hair: rgba(17,18,20,.12);
   --hair2: rgba(17,18,20,.08);
 
   --chipBg: rgba(17,18,20,.05);
 
+  /* EN typography */
   --bodySize: 10.2px;
   --bodyLH: 1.24;
   --h2Size: 11.3px;
   --h2LH: 1.12;
 
+  /* EN 2-col layout widths */
   --colGap: 9.5mm;
   --leftCol: 63%;
   --rightCol: 37%;
@@ -40,29 +48,33 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 
-html{ background:#0b0f1a; }
+/* ✅ 스크롤 내려가도 배경색 안 바뀌게(특히 Safari) */
+html, body { min-height: 100%; background: #0b0f1a; }
 body{
   margin: 0;
-  min-height: 100vh;
   font-family: var(--font-en);
   color: var(--text);
-  background: transparent;
-}
-
-/* ✅ 스크롤 내려도 배경색 “바뀌는” 현상 방지: fixed pseudo background */
-body::before{
-  content:"";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
   background:
     radial-gradient(1200px 600px at 15% 5%, rgba(255,255,255,.10), rgba(255,255,255,0)),
     radial-gradient(800px 500px at 80% 20%, rgba(255,255,255,.07), rgba(255,255,255,0)),
     #0b0f1a;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed;  Safari에서 색/레이어 튐 유발 → 제거 */
 }
 
+/* ===== Print frame ===== */
+.print-frame{
+  position: fixed;
+  right: 0; bottom: 0;
+  width: 0; height: 0;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== App Shell ===== */
 .app{
-  min-height: 100vh;
+  min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
 }
@@ -149,18 +161,21 @@ body::before{
 
 .main{ padding: 18px 14px 34px; }
 
+/* ===== Stage ===== */
 .stage{
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  gap: 0;
   position: relative;
 }
 @media (max-width: 1040px){
   .stage{ display: block; }
 }
 
+/* ===== Sheet preview (screen) ===== */
 .sheet-wrap{
   display: flex;
   justify-content: center;
@@ -177,6 +192,7 @@ body::before{
   overflow: visible;
 }
 
+/* ===== Resume typography ===== */
 .resume{
   font-size: var(--bodySize);
   line-height: var(--bodyLH);
@@ -212,6 +228,7 @@ body::before{
   line-height: 1.25;
 }
 
+/* Contact wrapping (avoid overflow) */
 .contact{
   text-align: right;
   font-size: 10px;
@@ -242,23 +259,29 @@ h2{
 }
 .item:first-child{ border-top: 0; padding-top: 0; }
 
-/* ✅ 날짜 오른쪽 “잘림” 방지: date 영역 최소폭 확보 + overflow 방지 */
 .row{
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(36mm, max-content);
+  grid-template-columns: minmax(0, 1fr) max-content;
   gap: 8px;
   align-items: baseline;
 }
 
+/* ✅ 날짜/오른쪽 잘림 방지 핵심(긴 org/role 있을 때) */
+.row > div:first-child{ min-width: 0; }
+.org, .role{ overflow-wrap: anywhere; }
+
 .org{ font-weight: 900; }
 .role{ font-weight: 750; color: #111827; margin-top: 2px; }
+
 .meta{
   color: var(--muted);
   font-size: 10px;
   white-space: nowrap;
   justify-self: end;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  padding-left: 8px;
+  max-width: 140px;           /* ✅ 극단 케이스에서 오른쪽 잘림 방지 */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ul{ margin: 6px 0 0 0; padding-left: 16px; }
@@ -300,15 +323,16 @@ li{ margin: 2px 0; }
   border-top: 1px solid var(--hair2);
 }
 
+/* ===== EN layout (2-col) ===== */
 .grid.en{
   display: grid;
   grid-template-columns: var(--leftCol) var(--rightCol);
   gap: var(--colGap);
   margin-top: 10px;
-  padding-right: 0; /* ✅ overflow 유발하던 1mm 제거 */
+  padding-right: 0; /* ✅ Safari에서 미세 padding이 잘림 유발하는 케이스 있어 제거 */
 }
 
-/* ===== KO ===== */
+/* ===== KO layout (A4, 1-col) ===== */
 body[data-lang="ko"]{
   font-family: var(--font-ko);
   --bodySize: 10.0px;
@@ -319,11 +343,10 @@ body[data-lang="ko"]{
   --padY: 11mm;
 }
 
-/* ✅ 한글 줄바꿈 안정화 */
+/* Korean line breaking: keep words together */
 body[data-lang="ko"] .resume{
-  line-break: strict;
   word-break: keep-all;
-  overflow-wrap: break-word; /* 긴 영문 토큰만 끊기게 */
+  overflow-wrap: anywhere;
 }
 
 body[data-lang="ko"] h2{
@@ -351,7 +374,7 @@ body[data-lang="ko"] h2{
 .ko-top-skills .k{ font-weight: 900; font-size: 10.2px; color: #0f172a; }
 .ko-top-skills .v{ color: var(--muted); font-size: 10px; line-height: 1.25; }
 
-/* ===== Web-only panel ===== */
+/* ===== Web-only help panel ===== */
 .panel{
   position: fixed;
   top: 86px;
@@ -395,9 +418,7 @@ body[data-lang="ko"] h2{
 }
 
 /* =========================================================
-   PRINT (ultra-stable)
-   - ✅ 빈 페이지 방지
-   - ✅ hairline(가로줄) 깨짐 방지: pt + solid
+   PRINT (ultra-stable / Safari-safe)
    ========================================================= */
 @media print{
   @page{ margin: 0; }
@@ -410,29 +431,32 @@ body[data-lang="ko"] h2{
     print-color-adjust: exact;
   }
 
-  /* ✅ 배경 pseudo 제거 */
-  body::before{ display:none !important; }
-
-  /* ✅ 레이아웃 그리드/스티키가 print에서 빈 페이지 만드는 케이스 제거 */
-  .app{ display:block !important; min-height:0 !important; }
+  /* hide web UI */
   .topbar, .panel{ display: none !important; }
   .main{ padding: 0 !important; }
-  .stage, .sheet-wrap{ display:block !important; max-width:none !important; }
+  .stage, .sheet-wrap{ max-width: none !important; }
 
+  /* Make sheet exactly match page size */
   .sheet{
     width: var(--pageW) !important;
     height: var(--pageH) !important;
     min-height: 0 !important;
-    margin: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     overflow: hidden !important;
+    margin: 0 !important;
   }
 
+  .resume{
+    transform: none !important;
+    width: auto !important;
+  }
+
+  /* chips off for print */
   .chips{ display: none !important; }
   .contact a{ border-bottom: 0 !important; text-decoration: none !important; }
 
-  /* ✅ 헤어라인 깨짐 방지 */
+  /* Hairline fix */
   .header{ border-bottom: 0.75pt solid #d1d5db !important; }
   .item{ border-top: 0.75pt solid #e5e7eb !important; }
   .kv .line{ border-top: 0.75pt solid #e5e7eb !important; }
@@ -441,5 +465,7 @@ body[data-lang="ko"] h2{
     border-bottom: 0.75pt solid #e5e7eb !important;
   }
 
-  /* ✅ break-inside 과하게 걸면 크롬이 “빈 2페이지” 만들 때가 있음 → 제거 */
+  /* ✅ break-inside: avoid를 너무 광범위하게 걸면 Safari가 빈페이지 만들기도 함 */
+  .header, .item { break-inside: avoid; }
+  .sheet{ break-after: avoid-page; }
 }
