@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /*/timecapsule/2A
-Disallow: /*/timecapsule/2A_coverletter_software.html
-Disallow: /*/timecapsule/2A_coverletter_hardware.html
-Sitemap: https://andylang8445.github.io/sitemap.xml

@@ -1,0 +1,72 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import TopLayout from "@layouts/TopLayout.astro";
+import BottomLayout from "@layouts/BottomLayout.astro";
+import Search from "@components/Search";
+import { SEARCH } from "@consts";
+
+// 1. 데이터 가져오기
+const posts = (await getCollection("blog")).filter((post) => !post.data.draft);
+const projects = (await getCollection("projects")).filter((post) => !post.data.draft);
+const work = await getCollection("work");
+
+// 2. [블로그] 데이터 변환
+const postsFormatted = posts.map((post) => ({
+  collection: "blog",
+  slug: post.slug,
+  data: {
+    title: post.data.title,
+    description: post.data.description,
+    date: post.data.date,
+    tags: post.data.tags || [],
+    // ✨ 핵심: 본문 내용을 통째로 넘김
+    body: post.body, 
+  }
+}));
+
+// 3. [프로젝트] 데이터 변환
+const projectsFormatted = projects.map((project) => ({
+  collection: "projects",
+  slug: project.slug,
+  data: {
+    title: project.data.title,
+    description: project.data.summary,
+    date: project.data.date,
+    tags: project.data.tags || [],
+    // ✨ 핵심: 본문 내용을 통째로 넘김
+    body: project.body,
+  }
+}));
+
+// 4. [경력] 데이터 변환
+const workFormatted = work.map((entry) => ({
+  collection: "work",
+  slug: entry.slug, 
+  data: {
+    title: `${entry.data.company} - ${entry.data.role}`,
+    description: `Work Experience`, // 화면 표시용은 깔끔하게
+    date: entry.data.dateStart,
+    // 기술 스택을 태그로 변환해서 넘김 (화면 표시용)
+    tags: entry.data.stack || [],
+    // ✨ 핵심: 본문 + 기술 스택을 검색용 텍스트로 합쳐서 넘김
+    body: `${entry.body} ${entry.data.stack ? entry.data.stack.join(" ") : ""}`,
+  },
+}));
+
+// 5. 모든 데이터 합치기
+const data = [...postsFormatted, ...projectsFormatted, ...workFormatted];
+---
+
+<PageLayout title={SEARCH.TITLE} description={SEARCH.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {SEARCH.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <Search client:load data={data} />
+    </div>
+  </BottomLayout>
+</PageLayout>

@@ -1,0 +1,9 @@
+services:
+  blog:
+    image: node:lts-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
+      - "4321:4321"
+    command: npm run dev -- --host
