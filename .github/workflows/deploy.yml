@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "master" ] # Andy님의 메인 브랜치가 master이므로 그대로 둡니다.
+    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
@@ -17,13 +17,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 1. pnpm 버전을 명시해서 설치해줘야 에러가 안 납니다 (추가된 부분)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - name: Install, build, and upload
         uses: withastro/action@v2
-        # pnpm이나 yarn을 사용하신다면 아래 주석을 풀고 설정하세요.
         with:
           path: .
           node-version: 20
-          package-manager: npm
+          # 2. 여기를 npm에서 pnpm으로 바꿨습니다. (수정된 부분)
+          package-manager: pnpm 
 
   deploy:
     needs: build
