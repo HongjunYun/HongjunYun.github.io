@@ -4,6 +4,12 @@ FROM node:slim
 # 2. 컨테이너 내부 작업 디렉토리 설정
 WORKDIR /app
 
+# 추가: 운영체제 레벨의 보안 패치를 최신으로 업데이트
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # 3. 호스트의 package 파일들을 컨테이너로 복사
 COPY package*.json ./
 
