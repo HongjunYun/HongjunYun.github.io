@@ -3,11 +3,7 @@ title:  "Apple WWDC 2020"
 summary: "Summary of WWDC 2020 things that I'm interested in"
 date:   2020-06-22 18:50:40
 tags:
-- Programming
-- Development
 - WWDC
-- TIL
-- Xcode
 - Apple
 ---
 # WWDC 2020
