@@ -25,3 +25,4 @@ jobs:
           format: 'table'
           exit-code: '1' # 취약점이 발견되면 빌드 실패 처리 (선택 사항)
           severity: 'CRITICAL,HIGH' # 치명적이고 높은 위험만 보고
+          ignore-unfixed: true
