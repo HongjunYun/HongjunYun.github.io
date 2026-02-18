@@ -1,5 +1,5 @@
 # 1. 베이스 이미지 설정 (Andy님의 Docker 추천 버전 적용)
-FROM node:slim
+FROM node:24-slim
 
 # 2. 컨테이너 내부 작업 디렉토리 설정
 WORKDIR /app
