@@ -1,0 +1,44 @@
+name: "CodeQL Security Scan"
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '30 1 * * 0' # 매주 일요일 새벽에 정기 검사
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript-typescript' ] # Astro는 JS/TS 기반이므로 이것만 검사하면 됨
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # CodeQL 엔진 초기화
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
+
+    # ⚠️ 만약 빌드 과정이 복잡하면 여기서 빌드를 해야 하지만,
+    # JS/TS는 보통 'Autobuild'가 알아서 처리해 줍니다.
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+
+    # 보안 분석 실행
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      with:
+        category: "/language:${{matrix.language}}"
