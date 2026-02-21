@@ -45,4 +45,13 @@ const legal = defineCollection({
   }),
 })
 
-export const collections = { work, blog, projects, legal }
+// 1. resume 컬렉션 정의하기
+const resume = defineCollection({
+  type: 'content', // 마크다운(MD/MDX) 파일 기반임을 의미
+  // z(Zod)를 이용해 마크다운 상단(Frontmatter)의 규칙을 정해줄 수 있습니다.
+  schema: z.object({
+    title: z.string().optional(),
+  }),
+});
+
+export const collections = { resume, work, blog, projects, legal }
