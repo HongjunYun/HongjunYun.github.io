@@ -12,7 +12,16 @@ import { SITE } from "@consts"
 <html lang="en">
   <head>
     <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
-  </head>
+    
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZSE3XFD3RL"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZSE3XFD3RL');
+    </script>
+    </head>
   <body>
     <Header />
     <Drawer />
