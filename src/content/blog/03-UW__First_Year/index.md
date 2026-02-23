@@ -8,6 +8,8 @@ tags:
 - First Year
 ---
 
+Before jumping in, why am I writing this? Honestly, it's mostly to leave a record of myself from this chaotic period. But at the same time, I hope some incoming UWaterloo student stumbles upon this and gets a little help—or at least avoids the stupid mistakes I made.
+
 <details>
 <summary><strong>📖 Quick UWaterloo Dictionary for Non-Waterloo Peeps (Click to expand)</strong></summary>
 
@@ -21,6 +23,7 @@ tags:
 * **PD (Professional Development):** Mandatory online courses you have to take while working your full-time co-op job. 
 * **CMH & E7:** Claudette Millar Hall (residence) and Engineering 7. The newest buildings on campus with actual working Air Conditioning.
 * **PR:** Permanent Residency in Canada.
+* **SWPP:** Student Work Placement Program. A Canadian government subsidy for employers hiring domestic students (which means international students can't apply).
 
 </details>
 
@@ -57,7 +60,7 @@ I was placed in **WEN North**, right next to my Don's room.
 Thankfully, I had a kitchen in my residence room, so I was able to cook my own meals. However, since it was mandatory to buy a meal plan, I used the cafeteria for breakfast, snacks, and late suppers.
 
 - **My go-to menu:** Booster Juice and pasta (sometimes burgers and pizza when I was up late).
-- **Room condition:** The room was not bad, and the heating was super nice. **However, there was no AC whatsoever**, so I had to shower multiple times a day.
+- **Room condition:** The room was not bad, and the heating was super nice. **There was no AC whatsoever**, but since 1A was during the Fall-Winter season, it was only slightly annoying.
 - **The Shower Struggle:** The washrooms and showers were shared, so sometimes I had literally to run to my friend's room when I needed a quick shower.
 
 ### Gears
@@ -81,7 +84,7 @@ Also, I didn't realize there were **application limits** on how many positions I
 - **The First Round:** I only applied to Big Tech companies and completely ran out of my application caps.
 - **The Server Crash:** As the deadline approached, the server became slower. At some point, it just decided to fail on me.
 
-It was a total disaster on my first run, but I actually learned a lot from it. Thankfully, during the continuous cycle, I was able to get an interview and land a job.
+It was a total disaster on my first run, but it taught me the hard way how to pace my applications. Thankfully, during the continuous cycle, I was able to get an interview and land a job.
 
 ### Actual Work
 
@@ -92,7 +95,7 @@ I was hoping for a remote position, as commuting from Waterloo to Hamilton witho
 **My Role & Tech Stack:**
 My job included working with an early-stage specialized AI utilizing a **reinforcement decision tree**. It was designed to detect defects during production on local edge devices like the **Jetson Nano**.
 
-It was highly interactive; I got to experience a real software engineering environment and see the practical possibilities of AI. It was definitely worth the commute.
+Here is the reality check: UWaterloo didn't teach me Python or PyTorch in my first year. When I was told to use them at work, I had to learn everything from scratch on the fly. To be completely honest, I felt like I spent so much time learning the tools that I couldn't contribute much to the actual company. But that intense pressure was exactly where I got my first taste of real-world software engineering.
 
 ### PD 19
 
@@ -128,9 +131,9 @@ Before getting into 1B, there is one thing I want to share: I really wish there 
 
 **The Biggest Hurdle: ECE 140**
 
-My worst course was **ECE 140**. I honestly struggled to grasp most of the course material. Unfortunately, I couldn't align well with the course structure, and finding the right support from the teaching staff when I was stuck proved to be extremely difficult.
+My worst course was **ECE 140**. I honestly struggled to grasp most of the course material. The final exam was a complete disaster. I remember staring at the paper, knowing I had seen the concepts somewhere, but having absolutely no idea how to approach the problems. I ended up handing in an almost blank paper. After walking out, I just sat on the stairs outside the exam hall for a long time, staring into the void and questioning my life choices.
 
-I ended up failing ECE 140 this term. It sucked, but it was a massive learning experience about my own limits and how I needed to approach studying differently.
+I failed ECE 140 this term. It was a devastating blow to my confidence, but it forced a massive change in my study habits. I realized that if the lecture style didn't work for me, I couldn't just sit there. I completely ignored the traditional approach and started teaching myself entirely through textbooks and the internet.
 
 **The Highlights: ECE 124 & MATH 119**
 
@@ -141,9 +144,9 @@ On the flip side, **ECE 124** and **MATH 119** were my absolute favorite courses
 
 ### Residence
 
-I came back to WEN North after my co-op. At this point, I thought a desk fan could handle the heat, but it definitely could not. 
-The AC in **CMH** (Claudette Millar Hall) and **E7** (Engineering 7) was my savior this term. Having two more roommates than the last term didn't help the heat situation at all.
-I still had a kitchen, though, so that was nice.
+I came back to WEN North after my co-op. This time, 1B fell during the **Summer term**, which meant the lack of AC went from "slightly annoying" to "pure survival mode." 
+
+I thought a desk fan could handle the heat, but it definitely could not. The AC in **CMH** (Claudette Millar Hall) and **E7** (Engineering 7) was my savior this term. Having two more roommates than the last term didn't help the heat situation at all. I still had a kitchen, though, so that was nice.
 
 ---
 
@@ -155,12 +158,14 @@ Co-operative Work Term 2
 
 For my second application cycle, I got a few interviews in the first round. One of them was **OpenText**.
 
-At this point, I wasn't paying attention to "PR/Citizenship only" requirements and applied to everything. The OpenText interview was going super well—until they asked if I had a PR (Permanent Residency). 
+At this point, I wasn't paying attention to "PR/Citizenship only" requirements and applied to everything. The OpenText interview was going super well—until they asked if I had a PR. I didn't. The interview crashed and burned right there, which was a deeply unpleasant wake-up call.
 
-The interview crashed and burned from there, which was not a pleasant experience. 
+After that, my WaterlooWorks strategy completely changed. I didn't even trust the built-in filters. Instead, I started aggressively hitting **`Cmd + F` on Safari** to manually scan every job description and weed out postings that required PR, Citizenship, or Canadian government-subsidized positions (like SWPP). 
 
-Fortunately, in the second round, I got another interview, and they offered me good money. I got the job, but it meant I had to move to **Ottawa** for the next term.
+Fortunately, in the second round, I got another interview, and they offered me good money. I got the job, but it meant I had to pack my bags and move to **Ottawa** for the next term.
 
 ---
 
-Overall, my first 12 months were full of unexpected failures and random disasters. But I survived, secured solid co-ops, and figured out what I actually like doing.
+Looking back, the kid who was stressing out over a lack of AC in 1A is very different from the one moving to Ottawa now. My first year was full of unexpected failures, almost-blank exam papers, and random disasters. But I survived, secured solid co-ops, figured out how to study my own way, and ultimately found what I actually like doing.
+
+Bring on Year 2.
