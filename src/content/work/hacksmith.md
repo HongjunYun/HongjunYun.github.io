@@ -1,8 +1,8 @@
 ---
 company: "The Hacksmith"
 role: "Engineering Intern"
-dateStart: "01/01/2023"
-dateEnd: "04/30/2023"
+dateStart: "01/10/2019"
+dateEnd: "01/30/2020"
 stack:
 - C++
 - JavaScript
