@@ -8,6 +8,46 @@ tags:
 - First Year
 ---
 
+<button id="tts-button" class="mt-4 mb-8 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow hover:bg-blue-600 transition-colors">
+  🎧 이 글 듣기 (Google TTS)
+</button>
+
+<script>
+  document.getElementById('tts-button').addEventListener('click', function() {
+    // 1. 이미 읽고 있다면 재생 중지
+    if (window.speechSynthesis.speaking) {
+      window.speechSynthesis.cancel();
+      this.innerText = "🎧 이 글 듣기 (Google TTS)";
+      return;
+    }
+
+    // 2. 본문 텍스트 가져오기
+    // (보통 Astro 테마들은 본문을 <article>이나 <main> 태그로 감쌉니다)
+    const articleText = document.querySelector('article')
+      ? document.querySelector('article').innerText
+      : document.body.innerText;
+
+    // 3. TTS 설정 및 실행
+    const utterance = new SpeechSynthesisUtterance(articleText);
+
+    // 언어 설정 (한국어 포스팅은 ko-KR, 영어 포스팅은 en-US 로 수정하세요!)
+    utterance.lang = 'ko-KR';
+    utterance.rate = 1.0; // 읽는 속도 (0.1 ~ 10)
+    utterance.pitch = 1.0; // 음성 높낮이 (0 ~ 2)
+
+    // 플레이 버튼 텍스트 변경
+    this.innerText = "⏹️ 읽기 멈춤";
+
+    // 재생이 끝나면 버튼 텍스트 원상복구
+    utterance.onend = () => {
+      this.innerText = "🎧 이 글 듣기 (Google TTS)";
+    };
+
+    // 재생 시작!
+    window.speechSynthesis.speak(utterance);
+  });
+</script>
+
 Before jumping in, why am I writing this? Honestly, it's mostly to leave a record of myself from this chaotic period. But at the same time, I hope some incoming UWaterloo student stumbles upon this and gets a little help—or at least avoids the stupid mistakes I made.
 
 <details>
@@ -15,12 +55,12 @@ Before jumping in, why am I writing this? Honestly, it's mostly to leave a recor
 
 <br>
 
-* **1A / 1B:** UWaterloo's way of counting semesters. "1A" means Year 1, Semester 1. "1B" means Year 1, Semester 2. 
-* **Don:** Basically a Resident Advisor (RA) in the dorms. 
-* **WEN North:** Wellesley Court North, one of the residence buildings on campus. 
+* **1A / 1B:** UWaterloo's way of counting semesters. "1A" means Year 1, Semester 1. "1B" means Year 1, Semester 2.
+* **Don:** Basically a Resident Advisor (RA) in the dorms.
+* **WEN North:** Wellesley Court North, one of the residence buildings on campus.
 * **WaterlooWorks:** The school's official job portal for co-op students. Infamous for crashing right before the application deadline.
 * **Continuous Cycle:** The survival phase of WaterlooWorks. If you don't get a job in the first main round, you enter this chaotic everyday-apply-and-interview phase.
-* **PD (Professional Development):** Mandatory online courses you have to take while working your full-time co-op job. 
+* **PD (Professional Development):** Mandatory online courses you have to take while working your full-time co-op job.
 * **CMH & E7:** Claudette Millar Hall (residence) and Engineering 7. The newest buildings on campus with actual working Air Conditioning.
 * **PR:** Permanent Residency in Canada.
 * **SWPP:** Student Work Placement Program. A Canadian government subsidy for employers hiring domestic students (which means international students can't apply).
@@ -47,8 +87,8 @@ I honestly didn't enjoy the term. Not that the courses were super hard, but ther
 
 My favorite courses this term were **ECE 150** and **ECE 198**:
 
-- **ECE 150** was basically reviewing fundamental concepts I already knew.
-- **ECE 198** was about learning how to make actual physical products that work in the real world.
+* **ECE 150** was basically reviewing fundamental concepts I already knew.
+* **ECE 198** was about learning how to make actual physical products that work in the real world.
 
 Quite obviously, my least favorite courses were **MATH 117** and **ARTS 190**.
 > And I will not explain why. 🤫
@@ -59,9 +99,9 @@ I was placed in **WEN North**, right next to my Don's room.
 
 Thankfully, I had a kitchen in my residence room, so I was able to cook my own meals. However, since it was mandatory to buy a meal plan, I used the cafeteria for breakfast, snacks, and late suppers.
 
-- **My go-to menu:** Booster Juice and pasta (sometimes burgers and pizza when I was up late).
-- **Room condition:** The room was not bad, and the heating was super nice. **There was no AC whatsoever**, but since 1A was during the Fall-Winter season, it was only slightly annoying.
-- **The Shower Struggle:** The washrooms and showers were shared, so sometimes I had literally to run to my friend's room when I needed a quick shower.
+* **My go-to menu:** Booster Juice and pasta (sometimes burgers and pizza when I was up late).
+* **Room condition:** The room was not bad, and the heating was super nice. **There was no AC whatsoever**, but since 1A was during the Fall-Winter season, it was only slightly annoying.
+* **The Shower Struggle:** The washrooms and showers were shared, so sometimes I had literally to run to my friend's room when I needed a quick shower.
 
 ### Gears
 
@@ -81,8 +121,8 @@ WaterlooWorks was a disaster for me. There was no practical guide that I could f
 
 Also, I didn't realize there were **application limits** on how many positions I could apply to.
 
-- **The First Round:** I only applied to Big Tech companies and completely ran out of my application caps.
-- **The Server Crash:** As the deadline approached, the server became slower. At some point, it just decided to fail on me.
+* **The First Round:** I only applied to Big Tech companies and completely ran out of my application caps.
+* **The Server Crash:** As the deadline approached, the server became slower. At some point, it just decided to fail on me.
 
 It was a total disaster on my first run, but it taught me the hard way how to pace my applications. Thankfully, during the continuous cycle, I was able to get an interview and land a job.
 
@@ -107,7 +147,7 @@ Honestly, the assignments are simple and not hard at all; they are just purely a
 
 ### Housing
 
-I looked into McMaster's off-campus accommodation options, but it turned out to be too expensive and far from work. 
+I looked into McMaster's off-campus accommodation options, but it turned out to be too expensive and far from work.
 My second pick was a long-term **Airbnb** near the workplace. There was absolutely nothing around the area, but I had a Walmart within walkable distance, and I could live with that.
 
 ---
@@ -139,12 +179,12 @@ I failed ECE 140 this term. It was a devastating blow to my confidence, but it f
 
 On the flip side, **ECE 124** and **MATH 119** were my absolute favorite courses this term.
 
-- **ECE 124:** This course taught me how digital logic works and how it is implemented in the real world. ECE 124 was the GOAT.
-- **MATH 119:** The course was hard, but the instructor was the GOAT.
+* **ECE 124:** This course taught me how digital logic works and how it is implemented in the real world. ECE 124 was the GOAT.
+* **MATH 119:** The course was hard, but the instructor was the GOAT.
 
 ### Residence
 
-I came back to WEN North after my co-op. This time, 1B fell during the **Summer term**, which meant the lack of AC went from "slightly annoying" to "pure survival mode." 
+I came back to WEN North after my co-op. This time, 1B fell during the **Summer term**, which meant the lack of AC went from "slightly annoying" to "pure survival mode."
 
 I thought a desk fan could handle the heat, but it definitely could not. The AC in **CMH** (Claudette Millar Hall) and **E7** (Engineering 7) was my savior this term. Having two more roommates than the last term didn't help the heat situation at all. I still had a kitchen, though, so that was nice.
 
@@ -160,7 +200,7 @@ For my second application cycle, I got a few interviews in the first round. One 
 
 At this point, I wasn't paying attention to "PR/Citizenship only" requirements and applied to everything. The OpenText interview was going super well—until they asked if I had a PR. I didn't. The interview crashed and burned right there, which was a deeply unpleasant wake-up call.
 
-After that, my WaterlooWorks strategy completely changed. I didn't even trust the built-in filters. Instead, I started aggressively hitting **`Cmd + F` on Safari** to manually scan every job description and weed out postings that required PR, Citizenship, or Canadian government-subsidized positions (like SWPP). 
+After that, my WaterlooWorks strategy completely changed. I didn't even trust the built-in filters. Instead, I started aggressively hitting **`Cmd + F` on Safari** to manually scan every job description and weed out postings that required PR, Citizenship, or Canadian government-subsidized positions (like SWPP).
 
 Fortunately, in the second round, I got another interview, and they offered me good money. I got the job, but it meant I had to pack my bags and move to **Ottawa** for the next term.
 
