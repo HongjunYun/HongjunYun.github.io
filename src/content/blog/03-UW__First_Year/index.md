@@ -8,42 +8,52 @@ tags:
 - First Year
 ---
 
-<button id="tts-button" class="mt-4 mb-8 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow hover:bg-blue-600 transition-colors">
-  🎧 Listen (Google TTS)
-</button>
-
 <script>
+  // 1. 목소리 리스트 미리 불러오기 (크롬 브라우저 버그 방지)
+  let availableVoices = [];
+  const loadVoices = () => { availableVoices = window.speechSynthesis.getVoices(); };
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
+
   document.getElementById('tts-button').addEventListener('click', function() {
-    // 1. 이미 읽고 있다면 재생 중지
     if (window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel();
-      this.innerText = "🎧 Listen (Google TTS)";
+      this.innerText = "🎧 Listen to this article (TTS)";
       return;
     }
 
-    // 2. 본문 텍스트 가져오기
-    // (보통 Astro 테마들은 본문을 <article>이나 <main> 태그로 감쌉니다)
-    const articleText = document.querySelector('article')
-      ? document.querySelector('article').innerText
-      : document.body.innerText;
+    // 2. 텍스트 스마트 추출 (표, 코드 기호 빼고 진짜 글(p, h2, h3, li)만 골라냄)
+    const contentArea = document.querySelector('article') || document.querySelector('main') || document.body;
+    const elements = contentArea.querySelectorAll('p, h2, h3, li');
+    
+    let cleanText = Array.from(elements)
+      .map(el => el.innerText.trim())
+      .filter(text => text.length > 0)
+      // 문장 사이에 마침표를 강제로 찍어줘서 숨 쉴 틈(Pause)을 만들어줍니다
+      .join('. '); 
 
-    // 3. TTS 설정 및 실행
-    const utterance = new SpeechSynthesisUtterance(articleText);
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    
+    // 3. 고품질 목소리(Premium, Google, Siri) 강제 선택
+    const englishVoices = availableVoices.filter(v => v.lang.includes('en'));
+    const premiumVoice = englishVoices.find(v => 
+      v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Siri') || v.name.includes('Samantha')
+    );
+    
+    if (premiumVoice) {
+      utterance.voice = premiumVoice;
+    }
+    
+    utterance.lang = 'en-US'; 
+    utterance.rate = 0.9; // 속도를 아주 살짝 늦추면 훨씬 사람 같습니다.
+    utterance.pitch = 1.0; 
 
-    // 언어 설정 (한국어 포스팅은 ko-KR, 영어 포스팅은 en-US 로 수정하세요!)
-    utterance.lang = 'en-US';
-    utterance.rate = 1.0; // 읽는 속도 (0.1 ~ 10)
-    utterance.pitch = 1.0; // 음성 높낮이 (0 ~ 2)
-
-    // 플레이 버튼 텍스트 변경
-    this.innerText = "⏹️ Stop Reading";
-
-    // 재생이 끝나면 버튼 텍스트 원상복구
+    this.innerText = "⏹️ Stop listening";
+    
     utterance.onend = () => {
-      this.innerText = "🎧 Listen (Google TTS)";
+      this.innerText = "🎧 Listen to this article (TTS)";
     };
 
-    // 재생 시작!
     window.speechSynthesis.speak(utterance);
   });
 </script>
