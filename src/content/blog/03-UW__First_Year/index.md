@@ -8,6 +8,10 @@ tags:
 - First Year
 ---
 
+<button id="tts-button" class="mt-4 mb-8 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow hover:bg-blue-600 transition-colors">
+  🎧 Listen (Google TTS)
+</button>
+
 <script>
   // 1. 목소리 리스트 미리 불러오기 (크롬 브라우저 버그 방지)
   let availableVoices = [];
