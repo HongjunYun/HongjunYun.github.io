@@ -13,43 +13,42 @@ tags:
 </button>
 
 <script>
-  // 1. 목소리 리스트 미리 불러오기 (크롬 브라우저 버그 방지)
-  let availableVoices = [];
-  const loadVoices = () => { availableVoices = window.speechSynthesis.getVoices(); };
-  window.speechSynthesis.onvoiceschanged = loadVoices;
-  loadVoices();
+  // 페이지 로드 시 목소리 미리 깨우기
+  window.speechSynthesis.getVoices();
 
   document.getElementById('tts-button').addEventListener('click', function() {
-    if (window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    
+    if (synth.speaking) {
+      synth.cancel();
       this.innerText = "🎧 Listen to this article (TTS)";
       return;
     }
 
-    // 2. 텍스트 스마트 추출 (표, 코드 기호 빼고 진짜 글(p, h2, h3, li)만 골라냄)
     const contentArea = document.querySelector('article') || document.querySelector('main') || document.body;
     const elements = contentArea.querySelectorAll('p, h2, h3, li');
-    
     let cleanText = Array.from(elements)
       .map(el => el.innerText.trim())
       .filter(text => text.length > 0)
-      // 문장 사이에 마침표를 강제로 찍어줘서 숨 쉴 틈(Pause)을 만들어줍니다
       .join('. '); 
 
     const utterance = new SpeechSynthesisUtterance(cleanText);
     
-    // 3. 고품질 목소리(Premium, Google, Siri) 강제 선택
-    const englishVoices = availableVoices.filter(v => v.lang.includes('en'));
-    const premiumVoice = englishVoices.find(v => 
-      v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Siri') || v.name.includes('Samantha')
-    );
+    // 💡 핵심: 버튼을 누르는 순간 다시 한번 목소리를 가져와서 강제로 찾습니다!
+    let voices = synth.getVoices();
     
-    if (premiumVoice) {
-      utterance.voice = premiumVoice;
+    // 맥북/아이폰의 Samantha, 구글 크롬의 고품질 US 목소리를 최우선으로 찾기
+    let bestVoice = voices.find(v => v.name.includes('Samantha')) 
+                 || voices.find(v => v.name.includes('Google US English')) 
+                 || voices.find(v => v.name.includes('Premium'))
+                 || voices.find(v => v.lang === 'en-US');
+
+    if (bestVoice) {
+      utterance.voice = bestVoice;
     }
     
     utterance.lang = 'en-US'; 
-    utterance.rate = 0.9; // 속도를 아주 살짝 늦추면 훨씬 사람 같습니다.
+    utterance.rate = 0.85; // 속도를 조금 더 늦춰서 여유롭게 만듭니다.
     utterance.pitch = 1.0; 
 
     this.innerText = "⏹️ Stop listening";
@@ -58,7 +57,7 @@ tags:
       this.innerText = "🎧 Listen to this article (TTS)";
     };
 
-    window.speechSynthesis.speak(utterance);
+    synth.speak(utterance);
   });
 </script>
 
