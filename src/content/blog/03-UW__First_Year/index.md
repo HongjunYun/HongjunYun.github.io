@@ -8,58 +8,80 @@ tags:
 - First Year
 ---
 
-<button id="tts-button" class="mt-4 mb-8 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow hover:bg-blue-600 transition-colors">
-  🎧 Listen (Google TTS)
-</button>
+
+<div class="not-prose my-10 flex flex-col gap-2 max-w-md">
+  <div class="flex items-center gap-2 px-1">
+    <span class="text-[10px] font-bold tracking-widest uppercase py-1 px-2 bg-indigo-600 text-white rounded-md shadow-sm">Post 03</span>
+    <span class="h-[1px] flex-1 bg-indigo-100 dark:bg-indigo-900/50"></span>
+  </div>
+
+  <div class="flex items-center p-5 bg-indigo-50/50 dark:bg-indigo-950/10 border border-indigo-200 dark:border-indigo-800 rounded-2xl transition-all hover:shadow-lg cursor-pointer group" id="custom-audio-player">
+    <audio id="article-audio" src="/audio/blog03-first-year-audio.mp3" preload="metadata"></audio>
+    <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-indigo-600 dark:bg-indigo-500 text-white rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+      <svg id="play-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 ml-1"><path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" /></svg>
+      <svg id="pause-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 hidden"><path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" /></svg>
+    </div>
+    <div class="ml-5 flex-1">
+      <div class="font-extrabold text-indigo-900 dark:text-indigo-100 text-base md:text-lg leading-tight tracking-tight">Listen to this article</div>
+      <div class="text-xs md:text-sm text-indigo-600/70 dark:text-indigo-400/70 font-medium mt-1" id="audio-status">Premium AI Voice (Zara)</div>
+    </div>
+    <div class="flex gap-1 items-end h-8 ml-3" id="wave-animation">
+      <div class="w-1.5 h-3 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
+      <div class="w-1.5 h-6 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
+      <div class="w-1.5 h-4 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
+      <div class="w-1.5 h-7 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
+    </div>
+  </div>
+</div>
 
 <script>
-  // 페이지 로드 시 목소리 미리 깨우기
-  window.speechSynthesis.getVoices();
+  (function() {
+    const player = document.getElementById('custom-audio-player');
+    const audio = document.getElementById('article-audio');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const statusText = document.getElementById('audio-status');
+    const waves = document.querySelectorAll('#wave-animation div');
 
-  document.getElementById('tts-button').addEventListener('click', function() {
-    const synth = window.speechSynthesis;
-    
-    if (synth.speaking) {
-      synth.cancel();
-      this.innerText = "🎧 Listen to this article (TTS)";
-      return;
-    }
-
-    const contentArea = document.querySelector('article') || document.querySelector('main') || document.body;
-    const elements = contentArea.querySelectorAll('p, h2, h3, li');
-    let cleanText = Array.from(elements)
-      .map(el => el.innerText.trim())
-      .filter(text => text.length > 0)
-      .join('. '); 
-
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    
-    // 💡 핵심: 버튼을 누르는 순간 다시 한번 목소리를 가져와서 강제로 찾습니다!
-    let voices = synth.getVoices();
-    
-    // 맥북/아이폰의 Samantha, 구글 크롬의 고품질 US 목소리를 최우선으로 찾기
-    let bestVoice = voices.find(v => v.name.includes('Samantha')) 
-                 || voices.find(v => v.name.includes('Google US English')) 
-                 || voices.find(v => v.name.includes('Premium'))
-                 || voices.find(v => v.lang === 'en-US');
-
-    if (bestVoice) {
-      utterance.voice = bestVoice;
-    }
-    
-    utterance.lang = 'en-US'; 
-    utterance.rate = 0.85; // 속도를 조금 더 늦춰서 여유롭게 만듭니다.
-    utterance.pitch = 1.0; 
-
-    this.innerText = "⏹️ Stop listening";
-    
-    utterance.onend = () => {
-      this.innerText = "🎧 Listen to this article (TTS)";
+    player.onclick = function() {
+      if (audio.paused) {
+        audio.play();
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+        waves.forEach((w, i) => {
+          w.style.animation = `audio-pulse 1s infinite ${i * 0.2}s`;
+          w.classList.add('bg-indigo-500', 'dark:bg-indigo-400');
+        });
+      } else {
+        audio.pause();
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+        statusText.innerText = "Paused";
+        waves.forEach(w => {
+          w.style.animation = 'none';
+          w.classList.remove('bg-indigo-500', 'dark:bg-indigo-400');
+        });
+      }
     };
 
-    synth.speak(utterance);
-  });
+    audio.ontimeupdate = function() {
+      if (!audio.paused) {
+        const current = Math.floor(audio.currentTime);
+        const mins = Math.floor(current / 60);
+        const secs = (current % 60).toString().padStart(2, '0');
+        statusText.innerText = `Playing • ${mins}:${secs}`;
+      }
+    };
+  })();
 </script>
+
+<style>
+  @keyframes audio-pulse {
+    0%, 100% { height: 0.75rem; }
+    50% { height: 1.75rem; }
+  }
+</style>
+
 
 Before jumping in, why am I writing this? Honestly, it's mostly to leave a record of myself from this chaotic period. But at the same time, I hope some incoming UWaterloo student stumbles upon this and gets a little help—or at least avoids the stupid mistakes I made.
 
