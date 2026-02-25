@@ -9,7 +9,7 @@ tags:
 ---
 
 <button id="tts-button" class="mt-4 mb-8 px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow hover:bg-blue-600 transition-colors">
-  🎧 이 글 듣기 (Google TTS)
+  🎧 Listen (Google TTS)
 </button>
 
 <script>
@@ -17,7 +17,7 @@ tags:
     // 1. 이미 읽고 있다면 재생 중지
     if (window.speechSynthesis.speaking) {
       window.speechSynthesis.cancel();
-      this.innerText = "🎧 이 글 듣기 (Google TTS)";
+      this.innerText = "🎧 Listen (Google TTS)";
       return;
     }
 
@@ -31,16 +31,16 @@ tags:
     const utterance = new SpeechSynthesisUtterance(articleText);
 
     // 언어 설정 (한국어 포스팅은 ko-KR, 영어 포스팅은 en-US 로 수정하세요!)
-    utterance.lang = 'ko-KR';
+    utterance.lang = 'en-US';
     utterance.rate = 1.0; // 읽는 속도 (0.1 ~ 10)
     utterance.pitch = 1.0; // 음성 높낮이 (0 ~ 2)
 
     // 플레이 버튼 텍스트 변경
-    this.innerText = "⏹️ 읽기 멈춤";
+    this.innerText = "⏹️ Stop Reading";
 
     // 재생이 끝나면 버튼 텍스트 원상복구
     utterance.onend = () => {
-      this.innerText = "🎧 이 글 듣기 (Google TTS)";
+      this.innerText = "🎧 Listen (Google TTS)";
     };
 
     // 재생 시작!
