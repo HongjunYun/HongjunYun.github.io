@@ -1,5 +1,5 @@
 ---
-title:  "First year at UWaterloo [EN]"
+title:  "[EN] First year at UWaterloo"
 summary: "My experience at UWaterloo for the last 12 months"
 date:   2022-09-03 18:50:40
 draft: false
