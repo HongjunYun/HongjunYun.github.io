@@ -6,7 +6,7 @@ draft: false
 tags:
 - UWaterloo
 - First Year
-- en
+- [EN]
 ---
 
 
