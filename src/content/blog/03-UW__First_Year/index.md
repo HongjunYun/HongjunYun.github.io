@@ -1,11 +1,12 @@
 ---
-title:  "First year at UWaterloo"
+title:  "First year at UWaterloo [EN]"
 summary: "My experience at UWaterloo for the last 12 months"
 date:   2022-09-03 18:50:40
 draft: false
 tags:
 - UWaterloo
 - First Year
+- en
 ---
 
 
