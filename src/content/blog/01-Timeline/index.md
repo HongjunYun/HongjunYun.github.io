@@ -5,7 +5,7 @@ date:   2019-04-01 21:17:00
 draft: false
 tags:
 - Secondary School
-- [KR]
+- "[KR]"
 ---
 
 ### Past(초등학교 5학년 ~ 고등학교 1학년)

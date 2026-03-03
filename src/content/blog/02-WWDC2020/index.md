@@ -5,7 +5,7 @@ date:   2020-06-22 18:50:40
 tags:
 - WWDC
 - Apple
-- [EN]
+- "[EN]"
 ---
 # WWDC 2020
 <b>This markdown might focus on the writer's experience, prefered platforms, or the writer's personal expressions.</b>

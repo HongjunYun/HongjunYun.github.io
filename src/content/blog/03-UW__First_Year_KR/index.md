@@ -1,135 +1,62 @@
 ---
-title:  "[EN] First year at UWaterloo"
-summary: "My experience at UWaterloo for the last 12 months"
+title:  "[KR] First year at UWaterloo"
+summary: "워털루 대학교 1학년 12 개월 생존기"
 date:   2022-09-03 18:50:40
-draft: false
+draft: true
 tags:
 - UWaterloo
 - First Year
-- "[EN]"
+- "[KR]"
 ---
 
-
-<div class="not-prose my-10 flex flex-col gap-2 max-w-md">
-  <div class="flex items-center gap-2 px-1">
-    <span class="text-[10px] font-bold tracking-widest uppercase py-1 px-2 bg-indigo-600 text-white rounded-md shadow-sm">Post 03</span>
-    <span class="h-[1px] flex-1 bg-indigo-100 dark:bg-indigo-900/50"></span>
-  </div>
-
-  <div class="flex items-center p-5 bg-indigo-50/50 dark:bg-indigo-950/10 border border-indigo-200 dark:border-indigo-800 rounded-2xl transition-all hover:shadow-lg cursor-pointer group" id="custom-audio-player">
-    <audio id="article-audio" src="/audio/blog03-first-year-audio.mp3" preload="metadata"></audio>
-    <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-indigo-600 dark:bg-indigo-500 text-white rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
-      <svg id="play-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 ml-1"><path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" /></svg>
-      <svg id="pause-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 hidden"><path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" /></svg>
-    </div>
-    <div class="ml-5 flex-1">
-      <div class="font-extrabold text-indigo-900 dark:text-indigo-100 text-base md:text-lg leading-tight tracking-tight">Listen to this article</div>
-      <div class="text-xs md:text-sm text-indigo-600/70 dark:text-indigo-400/70 font-medium mt-1" id="audio-status">Premium AI Voice (Zara)</div>
-    </div>
-    <div class="flex gap-1 items-end h-8 ml-3" id="wave-animation">
-      <div class="w-1.5 h-3 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
-      <div class="w-1.5 h-6 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
-      <div class="w-1.5 h-4 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
-      <div class="w-1.5 h-7 bg-indigo-200 dark:bg-indigo-800 rounded-full transition-all"></div>
-    </div>
-  </div>
-</div>
-
-<script>
-  (function() {
-    const player = document.getElementById('custom-audio-player');
-    const audio = document.getElementById('article-audio');
-    const playIcon = document.getElementById('play-icon');
-    const pauseIcon = document.getElementById('pause-icon');
-    const statusText = document.getElementById('audio-status');
-    const waves = document.querySelectorAll('#wave-animation div');
-
-    player.onclick = function() {
-      if (audio.paused) {
-        audio.play();
-        playIcon.classList.add('hidden');
-        pauseIcon.classList.remove('hidden');
-        waves.forEach((w, i) => {
-          w.style.animation = `audio-pulse 1s infinite ${i * 0.2}s`;
-          w.classList.add('bg-indigo-500', 'dark:bg-indigo-400');
-        });
-      } else {
-        audio.pause();
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-        statusText.innerText = "Paused";
-        waves.forEach(w => {
-          w.style.animation = 'none';
-          w.classList.remove('bg-indigo-500', 'dark:bg-indigo-400');
-        });
-      }
-    };
-
-    audio.ontimeupdate = function() {
-      if (!audio.paused) {
-        const current = Math.floor(audio.currentTime);
-        const mins = Math.floor(current / 60);
-        const secs = (current % 60).toString().padStart(2, '0');
-        statusText.innerText = `Playing • ${mins}:${secs}`;
-      }
-    };
-  })();
-</script>
-
-<style>
-  @keyframes audio-pulse {
-    0%, 100% { height: 0.75rem; }
-    50% { height: 1.75rem; }
-  }
-</style>
-
-
-Before jumping in, why am I writing this? Honestly, it's mostly to leave a record of myself from this chaotic period. But at the same time, I hope some incoming UWaterloo student stumbles upon this and gets a little help—or at least avoids the stupid mistakes I made.
+이 글은 지난 1년간 워털루 대학교에서 보낸 제 1학년 생활의 간단한 후기입니다. 입학 전에는 미처 몰랐던 점들과 직접 부딪히며 배운 것들을 정리해 보았습니다. 이제 막 입학을 앞둔 분들이나 생생한 경험담이 필요하신 분들께 조금이나마 보탬이 되었으면 합니다. 제가 겪은 시행착오가 누군가에게는 더 나은 선택을 위한 길잡이가 되길 바랍니다.
 
 <details>
-<summary><strong>📖 Quick UWaterloo Dictionary for Non-Waterloo Peeps (Click to expand)</strong></summary>
+<summary><strong>📖 The Waterloo Dictionary: 낯선 단어들이 일상이 되기까지 (클릭해서 펼치기)</strong></summary>
 
 <br>
 
-* **1A / 1B:** UWaterloo's way of counting semesters. "1A" means Year 1, Semester 1. "1B" means Year 1, Semester 2.
-* **Don:** Basically a Resident Advisor (RA) in the dorms.
-* **WEN North:** Wellesley Court North, one of the residence buildings on campus.
-* **WaterlooWorks:** The school's official job portal for co-op students. Infamous for crashing right before the application deadline.
-* **Continuous Cycle:** The survival phase of WaterlooWorks. If you don't get a job in the first main round, you enter this chaotic everyday-apply-and-interview phase.
-* **PD (Professional Development):** Mandatory online courses you have to take while working your full-time co-op job.
-* **CMH & E7:** Claudette Millar Hall (residence) and Engineering 7. The newest buildings on campus with actual working Air Conditioning.
-* **PR:** Permanent Residency in Canada.
-* **SWPP:** Student Work Placement Program. A Canadian government subsidy for employers hiring domestic students (which means international students can't apply).
+* **1A / 1B / 2A...:** 워털루만의 독특한 학기 구분법입니다. 1학년 1학기(1A)부터 졸업까지, 4개월 단위로 학업과 코업(인턴십)을 정교하게 오가는 삶의 이정표가 됩니다.
+* **Co-op (코업):** 학교의 정체성과도 같은 유급 인턴십 프로그램입니다. 전공 지식을 실무 현장에서 증명하고, 졸업 전 최대 2년의 경력을 쌓게 해주는 워털루의 핵심 동력입니다.
+* **Sequence (시퀀스):** 4.8년의 재학 기간 동안 언제 공부하고 언제 일할지를 정해놓은 일정표입니다. 스트림(Stream)이라고도 불리며, 이에 따라 방학 없는 치열한 대학 생활의 흐름이 결정됩니다.
+* **WaterlooWorks (워털루웍스):** 수천 개의 채용 공고가 올라오는 학교 전용 구직 포털입니다. 지원부터 면접 일정 관리까지 모든 과정이 이곳에서 이루어집니다.
+* **Ranking (매칭 시스템):** 구직의 마지막 단계입니다. 학생과 기업이 서로를 1~10순위로 매기고, 합산 점수가 낮은 순서대로 '매칭'되는 워털루만의 독특한 합격 시스템입니다.
+* **SWPP & PR:** 유학생 취업의 현실적인 문턱입니다. 캐나다 정부 보조금(SWPP)이나 영주권(PR) 취득 여부에 따라 유학생은 지원 가능한 포지션이 달라지기도 하므로 전략적인 준비가 필요합니다.
+* **Work Term Report:** 코업 기간 중 제출해야 하는 전공 관련 보고서입니다. 단순한 업무를 넘어 학문적 성찰을 요구하는, 코업 이수를 위한 필수 관문입니다.
+* **Quest & Learn:** 매일 마주하게 될 디지털 캠퍼스입니다. Quest는 학사 행정(수강신청, 성적)을, Learn은 실제 수업 자료 조회와 과제 제출을 지원합니다.
+* **The Plaza (플라자):** 캠퍼스 바로 옆에 위치한 식당가입니다. 유학 생활 중 가장 많은 끼니를 해결하게 될 학생들에게는 오아시스 같은 장소입니다.
+* **Landmarks (E7, DC, MC):** 전공에 따라 가장 많은 시간을 보내게 될 건물들입니다. E7은 공학도의 요람이며 DC와 MC는 수학과 컴퓨터 공학의 중심지이자 도서관이 있는 곳입니다.
+* **Don (돈) & Residence:** 기숙사 생활의 멘토인 선배 학생(Don)을 말하며, WEN과 CMH로 대표되는 기숙사는 대부분의 학생들이 모여서 공부하고 숙식을 해결하는 곳입니다.
 
 </details>
 
-## 1A Term
+## 1A 학기
 
-### Course Load
+### 수강과목
 
-I took the following courses in my first term at UWaterloo:
+워털루에서의 첫 학기는 학업 그 자체보다 **적응**하는 데 더 많은 에너지를 쏟게 됩니다. 개별 과목의 난이도 자체는 예상보다 높지 않지만 고등학교에 비해 훨씬 늘어난 과목 수와 쏟아지는 과제, 그리고 당장 시작해야 하는 코업(Co-op) 준비까지 동시에 해야합니다.
 
-| Course Code | Course Name | What it actually is |
+참고로 컴퓨터 공학(Computer Engineering) 전공은 학생이 직접 수강신청을 하는 것이 아니라 학교에서 일괄적으로 짠 시간표를 배정받는 시스템입니다. 같은 수업을 듣더라도 시퀀스(Stream)나 학생 그룹에 따라 수업 시간대는 오전반과 오후반 등으로 나뉘게 됩니다.
+
+1A 학기에 제가 수강했던 과목들은 다음과 같습니다:
+
+| 과목 코드 | 과목 명 | 특징 및 요약 |
 | :---: | --- | --- |
-| **ARTS 190** | First-Year Topics in Arts Disciplines | A mandatory arts elective. Lots of reading and writing essays. |
-| **ECE 105** | Classical Mechanics | High school physics on steroids. Dropping objects, calculating tension, and pure stress. |
-| **ECE 150** | Fundamentals of Programming | Intro to C++. Learning how to code from scratch (or reviewing if you already know it). |
-| **ECE 190** | Engineering Profession and Practice | Learning engineering ethics and how not to get sued. Very dry. |
-| **ECE 198** | Project Studio | Hands-on project course. Building actual physical things using microcontrollers. |
-| **MATH 115** | Linear Algebra for Engineering | Matrices, vectors, and wondering why we need so many dimensions. |
-| **MATH 117** | Calculus 1 for Engineering | Limits, derivatives, and pain. High school calculus but way harder. |
+| **ARTS 190** | First-Year Topics in Arts Disciplines | 방대한 양의 독서와 영상 시청, 그리고 보고서 제출이 요구되는 필수 교양 과목입니다. |
+| **ECE 105** | Classical Mechanics | 온타리오주 고등학교 과정을 기반으로, 수학적 접근이 한층 강조된 고전 역학 과목입니다. 쪽지시험과 과제의 비중이 상당히 높습니다. |
+| **ECE 150** | Fundamentals of Programming | C++ 프로그래밍 기초를 다룹니다. 초심자를 기준으로 수업이 진행되므로, 다른 언어라도 코딩 경험이 있다면 비교적 수월하게 따라갈 수 있습니다. |
+| **ECE 190** | Engineering Profession and Practice | 엔지니어링 윤리와 실무를 다룹니다. 엔지니어가 갖춰야 할 책임감을 배우는 이론 중심의 과목입니다. |
+| **ECE 198** | Project Studio | 마이크로컨트롤러(STM32)를 활용해 실제 하드웨어를 설계하고 제작하는 흥미로운 실습 과목입니다. 체감상 아두이노 실습과 비슷한 난이도입니다. |
+| **MATH 115** | Linear Algebra for Engineering | 공학 선형대수학입니다. 행렬과 벡터를 다루며 공학 수학의 기초를 다지는 중요한 관문이지만, 개념이 다소 생소하여 온전히 이해하는 데 꽤 시간이 걸릴 수 있습니다. |
+| **MATH 117** | Calculus 1 for Engineering | 공학 미적분학입니다. 극한과 미분 등 기초를 다루며, 고등학교 과정보다 난이도가 조금 더 높습니다. 온타리오주 고교 과정인 'Calculus and Vectors'를 이수했다면 한결 수월합니다. |
 
-I honestly didn't enjoy the term. Not that the courses were super hard, but there was a massive bump in workload compared to secondary school.
+이 중에서 제가 가장 흥미롭게 수강했던 과목은 **ECE 150**과 **ECE 198**입니다. **ECE 150**은 이전에 익혔던 프로그래밍 개념들을 다시금 체계적으로 정리할 수 있는 유익한 시간이었고, **ECE 198**은 이론으로만 배우던 것들을 실제 하드웨어로 구현해 보는 과정 자체가 무척 즐거웠습니다.
 
-My favorite courses this term were **ECE 150** and **ECE 198**:
+반면 수많은 공대생들이 공감하듯, **MATH 117**과 **ARTS 190**은 제가 가장 고전했던 과목들입니다.
 
-* **ECE 150** was basically reviewing fundamental concepts I already knew.
-* **ECE 198** was about learning how to make actual physical products that work in the real world.
+> 구체적인 이유는 굳이 설명하지 않아도 짐작하시리라 생각합니다. 🤫
 
-Quite obviously, my least favorite courses were **MATH 117** and **ARTS 190**.
-> And I will not explain why. 🤫
-
-### Residence and Food
+### 기숙사 생활과 음식
 
 I was placed in **WEN North**, right next to my Don's room.
 
