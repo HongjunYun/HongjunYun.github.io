@@ -58,7 +58,7 @@ tags:
 
 ### 기숙사 생활과 음식
 
-I was placed in **WEN North**, right next to my Don's room.
+제 기숙사는 **WEN North**였고, Don의 바로 옆방 이었습니다.
 
 Thankfully, I had a kitchen in my residence room, so I was able to cook my own meals. However, since it was mandatory to buy a meal plan, I used the cafeteria for breakfast, snacks, and late suppers.
 
