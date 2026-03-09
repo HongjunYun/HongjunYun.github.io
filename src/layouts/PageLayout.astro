@@ -4,7 +4,9 @@ import BaseHead from "@components/BaseHead.astro"
 import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import Drawer from "@components/Drawer.astro"
-const { title, description } = Astro.props
+
+// 1. Astro.props에서 새로 추가한 변수들을 받아오도록 수정합니다.
+const { title, description, audioUrl, hreflangEn, hreflangKo, hreflangX } = Astro.props
 import { SITE } from "@consts"
 ---
 
@@ -13,6 +15,14 @@ import { SITE } from "@consts"
   <head>
     <BaseHead title={`${title} | ${SITE.TITLE}`} description={description} />
     
+    {audioUrl && (
+      <meta property="og:audio" content={audioUrl} />
+      <meta property="og:audio:type" content="audio/mpeg" />
+    )}
+
+    {hreflangEn && <link rel="alternate" hreflang="en" href={hreflangEn} />}
+    {hreflangKo && <link rel="alternate" hreflang="ko" href={hreflangKo} />}
+    {hreflangX && <link rel="alternate" hreflang="x-default" href={hreflangX} />}
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ZSE3XFD3RL"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -21,7 +31,7 @@ import { SITE } from "@consts"
 
       gtag('config', 'G-ZSE3XFD3RL');
     </script>
-    </head>
+  </head>
   <body>
     <Header />
     <Drawer />

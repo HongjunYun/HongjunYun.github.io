@@ -20,6 +20,14 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     draft: z.boolean().optional(),
     category: z.string().optional(),
+
+    // 👇 새로 추가할 SEO 및 오디오 관련 변수들
+    canonicalUrl: z.string().optional(),
+    audioUrl: z.string().optional(),
+    readingTime: z.string().optional(),
+    hreflangEn: z.string().optional(),
+    hreflangKo: z.string().optional(),
+    hreflangX: z.string().optional(),
   }),
 })
 

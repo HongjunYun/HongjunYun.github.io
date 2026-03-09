@@ -1,12 +1,18 @@
 ---
 title:  "[EN] First year at UWaterloo"
 summary: "My experience at UWaterloo for the last 12 months"
-date:   2022-09-03 18:50:40
+date:   2022-09-03T18:50:40
 draft: false
 tags:
-- UWaterloo
-- First Year
-- "[EN]"
+  - UWaterloo
+  - First Year
+  - "[EN]"
+slug: "03-uw-first-year"
+canonicalUrl: "https://andylang8445.github.io/blog/uw-first-year"
+audioUrl: "https://andylang8445.github.io/audio/blog03-first-year-audio.mp3"
+readingTime: "10 min read"
+hreflangEn: "https://andylang8445.github.io/blog/uw-first-year"
+hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
 ---
 
 
@@ -245,3 +251,31 @@ Fortunately, in the second round, I got another interview, and they offered me g
 Looking back, the kid who was stressing out over a lack of AC in 1A is very different from the one moving to Ottawa now. My first year was full of unexpected failures, almost-blank exam papers, and random disasters. But I survived, secured solid co-ops, figured out how to study my own way, and ultimately found what I actually like doing.
 
 Bring on Year 2.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://andylang8445.github.io/blog/03-uw-first-year"
+  },
+  "headline": "First year at University of Waterloo: 12 months survival",
+  "description": "University of Waterloo Computer Engineering year 1 story. 1A/1B term courses, dorm with no AC, and two co-op interviews.",
+  "author": {
+    "@type": "Person",
+    "name": "Andy Yun"
+  },
+  "datePublished": "2022-09-03T18:50:40+09:00",
+  "dateModified": "2022-09-03T18:50:40+09:00",
+  "timeRequired": "PT10M",
+  "inLanguage": "en",
+  "audio": {
+    "@type": "AudioObject",
+    "contentUrl": "https://andylang8445.github.io/audio/blog03-first-year-audio.mp3",
+    "encodingFormat": "audio/mpeg",
+    "name": "Audible University of Waterloo 12 months survival story",
+    "duration": "PT4M03S" 
+  }
+}
+</script>

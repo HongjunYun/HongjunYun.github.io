@@ -8,21 +8,30 @@ import ArticleBottomLayout from "@layouts/ArticleBottomLayout.astro"
 
 // Create the static blog pages
 export async function getStaticPaths() {
-	const posts = await getCollection("blog")
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}))
+  const posts = await getCollection("blog")
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }))
 }
 
 // Get the requested post
 type Props = CollectionEntry<"blog">
 const post = Astro.props
-const { title, summary } = post.data
+
+// 1. 여기서 프론트매터의 데이터들을 꺼내옵니다.
+const { title, summary, audioUrl, hreflangEn, hreflangKo } = post.data
 ---
 
-<PageLayout title={title} description={summary}>
-  <TopLayout>
+<PageLayout 
+  title={title} 
+  description={summary}
+  audioUrl={audioUrl}
+  hreflangEn={hreflangEn}
+  hreflangKo={hreflangKo}
+  hreflangX={hreflangEn} 
+>
+<TopLayout>
     <div class="animate">
       <ArticleTopLayout entry={post}/>
     </div>
