@@ -1,5 +1,5 @@
 ---
-title:  "[EN] First year at UWaterloo"
+title:  "[EN] My First Year at University of Waterloo as a Korean International Student"
 summary: "My experience at UWaterloo for the last 12 months"
 date:   2022-09-03T18:50:40
 draft: false
@@ -13,6 +13,7 @@ audioUrl: "https://andylang8445.github.io/audio/blog03-first-year-audio.mp3"
 readingTime: "10 min read"
 hreflangEn: "https://andylang8445.github.io/blog/uw-first-year"
 hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
+order: 1
 ---
 
 

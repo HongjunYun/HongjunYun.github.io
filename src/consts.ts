@@ -56,6 +56,10 @@ export const LINKS: Links = [
     HREF: "/projects", 
   },
   {
+    HREF: "/waterloo",
+    TEXT: "UWaterloo"
+  },
+  {
     TEXT: "Resume",
     HREF: "/resume",
   },

@@ -4,10 +4,14 @@ import { cn } from "@lib/utils"
 const { pathname } = Astro.url
 const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
+// 🚨 블로그 본문(/blog/글제목)인지 체크 (목록 페이지 제외)
+const isBlogPost = subpath?.[0] === "blog" && subpath?.length > 1;
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 ">
-  <Container size="md">
+  {isBlogPost && (
+    <div id="progress-bar" class="absolute top-0 left-0 h-[2px] bg-indigo-600 dark:bg-indigo-400 z-[60] w-0 transition-all duration-150"></div>
+  )}
     <div class="relative h-full w-full">
       <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold">
         <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
@@ -97,6 +101,25 @@ import Container from "@components/Container.astro"
     const drawerButton = document.getElementById("header-drawer-button")
     drawerButton?.addEventListener("click", toggleDrawer)
   }
+
+  function updateProgressBar() {
+    const progressBar = document.getElementById("progress-bar");
+    if (!progressBar) return; // 🚨 게이지가 없으면(블로그가 아니면) 아예 실행 안 함
+
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = height > 0 ? (winScroll / height) * 100 : 0; 
+    progressBar.style.width = scrolled + "%";
+  }
+  
+  // 스크롤할 때마다 게이지 업데이트
+  window.addEventListener("scroll", updateProgressBar);
+  
+  // Astro 페이지 이동 시 이벤트
+  document.addEventListener("astro:page-load", () => {
+    window.addEventListener("scroll", updateProgressBar);
+    updateProgressBar(); // 👈 페이지 이동 직후 게이지를 알맞게 초기화하도록 이 줄을 추가!
+  });
 
   document.addEventListener("astro:after-swap", initializeDrawerButton)
   initializeDrawerButton()

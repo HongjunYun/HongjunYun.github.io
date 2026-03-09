@@ -1,5 +1,5 @@
 ---
-title:  "[KR] First year at UWaterloo"
+title:  "[KR] My First Year at University of Waterloo as a Korean International Student"
 summary: "워털루 대학교 1학년 후기"
 date:   2022-09-03T22:21:56
 draft: false
@@ -13,15 +13,18 @@ audioUrl: "https://andylang8445.github.io/audio/blog03-first-year-audio-kr.mp3"
 readingTime: "11 min read"
 hreflangEn: "https://andylang8445.github.io/blog/uw-first-year"
 hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
+order: 1
 ---
 
 ### Summary
 
-- 캐나다 유학을 선택한 이유
-- University of Waterloo 첫 1년 유학생 경험
+- 캐나다 유학을 선택하게 된 이유
+- University of Waterloo 첫 1년 경험
 - 캐나다 대학 생활에서 느낀 현실적인 변화
+- 워털루에서 컴퓨터공학을 공부하며 느낀 점
 
 >이 글을 음성으로 듣고 싶다면 아래 플레이어를 이용하세요.
+
 <div class="not-prose my-10 flex flex-col gap-2 max-w-md">
   <div class="flex items-center gap-2 px-1">
     <span class="text-[10px] font-bold tracking-widest uppercase py-1 px-2 bg-indigo-600 text-white rounded-md shadow-sm">Post 03</span>
@@ -35,7 +38,7 @@ hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
       <svg id="pause-icon" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 hidden"><path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 01.75-.75H9a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H7.5a.75.75 0 01-.75-.75V5.25zm7.5 0A.75.75 0 0115 4.5h1.5a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75V5.25z" clip-rule="evenodd" /></svg>
     </div>
     <div class="ml-5 flex-1">
-      <div class="font-extrabold text-indigo-900 dark:text-indigo-100 text-base md:text-lg leading-tight tracking-tight">Listen to this article</div>
+      <div class="font-extrabold text-indigo-900 dark:text-indigo-100 text-base md:text-lg leading-tight tracking-tight">음성으로 이 글 듣기</div>
       <div class="text-xs md:text-sm text-indigo-600/70 dark:text-indigo-400/70 font-medium mt-1" id="audio-status">Premium AI Voice (Han)</div>
     </div>
     <div class="flex gap-1 items-end h-8 ml-3" id="wave-animation">
