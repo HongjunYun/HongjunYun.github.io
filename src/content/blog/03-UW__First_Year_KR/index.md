@@ -1,7 +1,7 @@
 ---
 title:  "[KR] First year at UWaterloo"
 summary: "워털루 대학교 1학년 후기"
-date:   2022-09-03 18:50:40
+date:   2022-09-03T22:21:56
 draft: false
 tags:
 - UWaterloo
@@ -279,8 +279,8 @@ Bring on Year 2.
     "@type": "Person",
     "name": "Andy Yun"
   },
-  "datePublished": "2022-09-03T18:50:40+09:00",
-  "dateModified": "2022-09-03T18:50:40+09:00",
+  "datePublished": "2022-09-03T22:21:56+09:00",
+  "dateModified": "2022-09-03T22:21:56:40+09:00",
   "timeRequired": "PT11M",
   "inLanguage": "ko",
   "audio": {
