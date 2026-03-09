@@ -1,6 +1,6 @@
 ---
-title:  "[KR] My First Year at University of Waterloo as a Korean International Student"
-summary: "워털루 대학교 1학년 후기"
+title:  "워털루 ECE 1학년: 한국인 유학생 후기"
+summary: "워털루 대학교 ECE 1학년 과정(1A, 1B)과 첫 코업 구직"
 date:   2022-09-03T22:21:56
 draft: false
 tags:
@@ -24,7 +24,6 @@ order: 1
 - 워털루에서 컴퓨터공학을 공부하며 느낀 점
 
 >이 글을 음성으로 듣고 싶다면 아래 플레이어를 이용하세요.
-
 <div class="not-prose my-10 flex flex-col gap-2 max-w-md">
   <div class="flex items-center gap-2 px-1">
     <span class="text-[10px] font-bold tracking-widest uppercase py-1 px-2 bg-indigo-600 text-white rounded-md shadow-sm">Post 03</span>
@@ -267,6 +266,12 @@ Co-operative Work Term 2
 이제 다음 챕터로 넘어갈 준비가 되었습니다.
 
 Bring on Year 2.
+
+---
+
+앞으로 워털루에 오게 될 다른 학생들에게 이 글이 조금이나마 도움이 되었으면 합니다.
+
+[← 워털루 생존 가이드로 돌아가기](/waterloo)
 
 <script type="application/ld+json">
 {

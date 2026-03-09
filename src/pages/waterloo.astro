@@ -10,7 +10,7 @@ const waterlooPosts = allPosts.filter(post =>
   post.data.tags?.includes("UWaterloo") && !post.data.draft
 );
 
-// 2. 정렬: Frontmatter의 order(1, 2, 3...) 순서 기준
+// 2. 정렬: order 기준
 const enPosts = waterlooPosts
   .filter(post => post.data.tags?.includes("[EN]"))
   .sort((a, b) => (a.data.order || 0) - (b.data.order || 0));
@@ -24,7 +24,7 @@ const koPosts = waterlooPosts
   <div class="pt-36 pb-12">
     <Container size="md">
       <div class="animate border-b border-black/5 dark:border-white/5 pb-12 mb-12">
-        <div id="header-en">
+        <div id="header-en" class="lang-header">
           <h1 class="text-5xl font-black text-black dark:text-white tracking-tighter">
             The Waterloo <br/><span class="text-indigo-600 dark:text-indigo-400">Survival Guide</span> 🦆
           </h1>
@@ -32,12 +32,12 @@ const koPosts = waterlooPosts
             Everything you need to survive as a ECE student at UWaterloo. From admission to co-op, I've gathered all my tips here.
           </p>
         </div>
-        <div id="header-ko" class="hidden">
+        <div id="header-ko" class="lang-header hidden">
           <h1 class="text-5xl font-black text-black dark:text-white tracking-tighter">
             워털루 대학교 <br/><span class="text-indigo-600 dark:text-indigo-400">생존 가이드</span> 🦆
           </h1>
           <p class="mt-6 text-xl text-neutral-500 dark:text-neutral-400 leading-relaxed max-w-2xl">
-            워털루 대학교 컴퓨터 공학과 신입생을 위한 생존 가이드입니다. 합격 통지서부터 코업(Co-op)까지 제 모든 팁을 정리했습니다.
+            워털루 대학교 ECE 전공 신입생을 위한 생존 가이드입니다. 합격 통지서부터 코업(Co-op)까지 제 모든 팁을 정리했습니다.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@ const koPosts = waterlooPosts
       <div class="animate flex items-center justify-between gap-4 mb-12">
         <div class="flex p-1 bg-neutral-100 dark:bg-neutral-800 rounded-xl font-bold text-sm">
           <button id="show-en" class="px-6 py-2 rounded-lg transition-all bg-white dark:bg-neutral-700 shadow-sm text-black dark:text-white">English</button>
-          <button id="show-ko" class="px-6 py-2 rounded-lg transition-all text-neutral-500 hover:text-black dark:hover:text-white">한국어</button>
+          <button id="show-ko" class="px-6 py-2 rounded-lg transition-all text-neutral-500">한국어</button>
         </div>
         <span class="text-xs font-bold text-neutral-400 uppercase tracking-widest">
           <span id="count-en">{enPosts.length} Chapters</span>
@@ -54,36 +54,36 @@ const koPosts = waterlooPosts
       </div>
 
       <div class="animate">
-        <div id="section-en" class="space-y-8">
+        <div id="section-en" class="lang-section space-y-8">
           {enPosts.map((post, index) => (
             <a href={`/blog/${post.slug}`} class="group block relative pl-12">
               <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-neutral-100 dark:bg-neutral-800 group-last:bottom-full"></div>
-              <div class="absolute left-[-15px] top-0 w-8 h-8 rounded-full bg-white dark:bg-neutral-900 border-2 border-indigo-500 text-indigo-600 flex items-center justify-center text-xs font-bold z-10">{index + 1}</div>
+              <div class="absolute left-[-15px] top-0 w-8 h-8 rounded-full bg-white dark:bg-neutral-900 border-2 border-indigo-500 text-indigo-600 flex items-center justify-center text-[10px] font-bold z-10">{index + 1}</div>
               <div class="p-6 rounded-2xl border border-transparent hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-all">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">Chapter {index + 1}</span>
-                  <span class="text-neutral-300 dark:text-neutral-600">•</span>
-                  <span class="text-xs font-medium text-neutral-400 uppercase tracking-widest">{post.data.readingTime}</span>
+                <div class="flex items-center gap-2 mb-2 text-[10px] font-bold uppercase tracking-widest">
+                  <span class="text-indigo-500">Chapter {index + 1}</span>
+                  <span class="text-neutral-300">•</span>
+                  <span class="text-neutral-400">{post.data.readingTime}</span>
                 </div>
-                <h3 class="text-2xl font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{post.data.title}</h3>
+                <h3 class="text-2xl font-bold group-hover:text-indigo-600 transition-colors">{post.data.title}</h3>
                 <p class="mt-2 text-neutral-500 dark:text-neutral-400 line-clamp-2">{post.data.summary}</p>
               </div>
             </a>
           ))}
         </div>
 
-        <div id="section-ko" class="hidden space-y-8">
+        <div id="section-ko" class="lang-section hidden space-y-8">
           {koPosts.map((post, index) => (
             <a href={`/blog/${post.slug}`} class="group block relative pl-12">
               <div class="absolute left-0 top-0 bottom-0 w-[2px] bg-neutral-100 dark:bg-neutral-800 group-last:bottom-full"></div>
-              <div class="absolute left-[-15px] top-0 w-8 h-8 rounded-full bg-white dark:bg-neutral-900 border-2 border-indigo-500 text-indigo-600 flex items-center justify-center text-xs font-bold z-10">{index + 1}</div>
+              <div class="absolute left-[-15px] top-0 w-8 h-8 rounded-full bg-white dark:bg-neutral-900 border-2 border-indigo-500 text-indigo-600 flex items-center justify-center text-[10px] font-bold z-10">{index + 1}</div>
               <div class="p-6 rounded-2xl border border-transparent hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-all">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="text-xs font-bold text-indigo-500 uppercase tracking-widest">챕터 {index + 1}</span>
-                  <span class="text-neutral-300 dark:text-neutral-600">•</span>
-                  <span class="text-xs font-medium text-neutral-400 uppercase tracking-widest">{post.data.readingTime}</span>
+                <div class="flex items-center gap-2 mb-2 text-[10px] font-bold uppercase tracking-widest">
+                  <span class="text-indigo-500">챕터 {index + 1}</span>
+                  <span class="text-neutral-300">•</span>
+                  <span class="text-neutral-400">{post.data.readingTime?.replace('min read', '분 분량')}</span>
                 </div>
-                <h3 class="text-2xl font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{post.data.title}</h3>
+                <h3 class="text-2xl font-bold group-hover:text-indigo-600 transition-colors">{post.data.title}</h3>
                 <p class="mt-2 text-neutral-500 dark:text-neutral-400 line-clamp-2">{post.data.summary}</p>
               </div>
             </a>
@@ -95,15 +95,13 @@ const koPosts = waterlooPosts
         <div id="tip-en" class="p-8 bg-indigo-50 dark:bg-indigo-950/20 rounded-3xl border border-indigo-100 dark:border-indigo-900/30">
           <h4 class="text-lg font-bold text-indigo-900 dark:text-indigo-100">💡 Tip for Waterloo Students</h4>
           <p class="mt-2 text-indigo-700/70 dark:text-indigo-300/70 leading-relaxed">
-            This guide is updated regularly. If you have questions or topics you'd like to see, let me know. 
-            <strong>Watch out for the Geese</strong>, and have a great lab session today!
+            This guide is updated regularly. <strong>Watch out for the Geese</strong>, and have a great lab session today!
           </p>
         </div>
         <div id="tip-ko" class="hidden p-8 bg-indigo-50 dark:bg-indigo-950/20 rounded-3xl border border-indigo-100 dark:border-indigo-900/30">
           <h4 class="text-lg font-bold text-indigo-900 dark:text-indigo-100">💡 워털루 학생들을 위한 팁</h4>
           <p class="mt-2 text-indigo-700/70 dark:text-indigo-300/70 leading-relaxed">
-            이 가이드는 상시 업데이트됩니다. 궁금한 점이나 추가되었으면 하는 주제가 있다면 언제든 알려주세요. 
-            <strong>구스(Geese) 조심하시고</strong>, 오늘도 즐거운 랩 생활 되시길 바랍니다!
+            이 가이드는 상시 업데이트됩니다. <strong>구스(Geese) 조심하시고</strong>, 오늘도 즐거운 랩 생활 되시길 바랍니다!
           </p>
         </div>
       </div>
@@ -115,7 +113,7 @@ const koPosts = waterlooPosts
           { name: "Learn", url: "https://learn.uwaterloo.ca/", color: "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300" },
           { name: "WWorks", url: "https://waterlooworks.uwaterloo.ca/", color: "bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300" }
         ].map(link => (
-          <a href={link.url} target="_blank" class={`p-4 rounded-2xl text-center font-bold text-sm transition-all hover:-translate-y-1 active:scale-95 shadow-sm ${link.color}`}>
+          <a href={link.url} target="_blank" class={`p-4 rounded-2xl text-center font-bold text-sm transition-all hover:-translate-y-1 shadow-sm ${link.color}`}>
             {link.name} ↗
           </a>
         ))}
@@ -125,29 +123,37 @@ const koPosts = waterlooPosts
 </PageLayout>
 
 <script is:inline>
-  function initWaterloo() {
+  function setupToggle() {
     const btnEn = document.getElementById('show-en');
     const btnKo = document.getElementById('show-ko');
-    
-    const enEls = [document.getElementById('header-en'), document.getElementById('section-en'), document.getElementById('tip-en'), document.getElementById('count-en')];
-    const koEls = [document.getElementById('header-ko'), document.getElementById('section-ko'), document.getElementById('tip-ko'), document.getElementById('count-ko')];
 
     if (!btnEn || !btnKo) return;
 
-    const active = ["bg-white", "dark:bg-neutral-700", "shadow-sm", "text-black", "dark:text-white"];
-    const inactive = ["text-neutral-500"];
+    const enEls = [document.getElementById('header-en'), document.getElementById('section-en'), document.getElementById('tip-en'), document.getElementById('count-en')];
+    const koEls = [document.getElementById('header-ko'), document.getElementById('section-ko'), document.getElementById('tip-ko'), document.getElementById('count-ko')];
 
-    function setLang(lang) {
-      const isEn = lang === 'en';
-      btnEn.classList.toggle(...active, isEn); btnEn.classList.toggle(...inactive, !isEn);
-      btnKo.classList.toggle(...active, !isEn); btnKo.classList.toggle(...inactive, isEn);
-      enEls.forEach(el => el?.classList.toggle('hidden', !isEn));
-      koEls.forEach(el => el?.classList.toggle('hidden', isEn));
+    function update(isEn) {
+      // 🚨 오타 수정 및 로직 반전 해결
+      const active = ["bg-white", "dark:bg-neutral-700", "shadow-sm", "text-black", "dark:text-white"];
+      const inactive = ["text-neutral-500"];
+
+      if (isEn) {
+        btnEn.classList.add(...active); btnEn.classList.remove(...inactive);
+        btnKo.classList.remove(...active); btnKo.classList.add(...inactive);
+        enEls.forEach(el => el?.classList.remove('hidden'));
+        koEls.forEach(el => el?.classList.add('hidden'));
+      } else {
+        btnKo.classList.add(...active); btnKo.classList.remove(...inactive);
+        btnEn.classList.remove(...active); btnEn.classList.add(...inactive);
+        koEls.forEach(el => el?.classList.remove('hidden'));
+        enEls.forEach(el => el?.classList.add('hidden'));
+      }
     }
 
-    btnEn.addEventListener('click', () => setLang('en'));
-    btnKo.addEventListener('click', () => setLang('ko'));
+    btnEn.addEventListener('click', () => update(true));
+    btnKo.addEventListener('click', () => update(false));
   }
-  document.addEventListener("astro:page-load", initWaterloo);
-  initWaterloo();
+
+  document.addEventListener("astro:page-load", setupToggle);
+  setupToggle();
 </script>

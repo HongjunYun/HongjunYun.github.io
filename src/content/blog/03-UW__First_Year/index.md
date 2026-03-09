@@ -1,5 +1,5 @@
 ---
-title:  "[EN] My First Year at University of Waterloo as a Korean International Student"
+title:  "My First Year at University of Waterloo as a Korean International Student"
 summary: "My experience at UWaterloo for the last 12 months"
 date:   2022-09-03T18:50:40
 draft: false
@@ -16,7 +16,14 @@ hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
 order: 1
 ---
 
+### Summary
 
+- Reasons behind choosing Canada for my international studies as a Korean
+- An honest recap of my first 12 months at the University of Waterloo
+- Realistic lifestyle changes and cultural shifts in Canadian university life
+- Key takeaways and reflections on the Computer Engineering (ECE) curriculum
+
+> If you'd rather listen than read, use the player below to hear the audio version of this post.
 <div class="not-prose my-10 flex flex-col gap-2 max-w-md">
   <div class="flex items-center gap-2 px-1">
     <span class="text-[10px] font-bold tracking-widest uppercase py-1 px-2 bg-indigo-600 text-white rounded-md shadow-sm">Post 03</span>
@@ -252,6 +259,12 @@ Fortunately, in the second round, I got another interview, and they offered me g
 Looking back, the kid who was stressing out over a lack of AC in 1A is very different from the one moving to Ottawa now. My first year was full of unexpected failures, almost-blank exam papers, and random disasters. But I survived, secured solid co-ops, figured out how to study my own way, and ultimately found what I actually like doing.
 
 Bring on Year 2.
+
+---
+
+Hope this helps any future Warriors out there. 
+
+[← Back to Waterloo Survival Guide](/waterloo)
 
 <script type="application/ld+json">
 {
