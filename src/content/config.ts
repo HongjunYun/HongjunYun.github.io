@@ -28,6 +28,7 @@ const blog = defineCollection({
     hreflangEn: z.string().optional(),
     hreflangKo: z.string().optional(),
     hreflangX: z.string().optional(),
+    order: z.number().optional(),
   }),
 })
 
