@@ -29,6 +29,7 @@ const blog = defineCollection({
     hreflangKo: z.string().optional(),
     hreflangX: z.string().optional(),
     order: z.number().optional(),
+    updatedDate: z.coerce.date().optional(),
   }),
 })
 
@@ -43,6 +44,7 @@ const projects = defineCollection({
     draft: z.boolean().optional(),
     demoUrl: z.string().optional(),
     repoUrl: z.string().optional(),
+    updatedDate: z.coerce.date().optional(),
   }),
 })
 

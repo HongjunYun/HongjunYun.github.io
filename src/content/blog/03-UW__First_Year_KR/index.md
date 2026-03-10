@@ -2,6 +2,7 @@
 title:  "워털루 ECE 1학년: 한국인 유학생 후기"
 summary: "워털루 대학교 ECE 1학년 과정(1A, 1B)과 첫 코업 구직"
 date:   2022-09-03T22:21:56
+updatedDate: 2026-03-09
 draft: false
 tags:
 - UWaterloo
