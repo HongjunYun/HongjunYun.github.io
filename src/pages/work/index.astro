@@ -30,10 +30,21 @@ function formatWorkDate(input: Date | string) {
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
   <TopLayout>
-    <div class="animate page-heading">
+  <div class="animate flex items-center justify-between">
+    <div class="page-heading mb-0">
       {WORK.TITLE}
     </div>
-  </TopLayout>
+    
+    <a href="https://www.linkedin.com/in/hongjunyun" target="_blank" class="group flex gap-2 items-center px-3 py-1.5 truncate rounded text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black/5 hover:dark:bg-white/15 blend transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4 text-current group-hover:text-[#0A66C2] dark:group-hover:text-[#4CA2FF] transition-colors">
+        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5V9h3v10zM6.5 7.75A1.75 1.75 0 118.25 6 1.75 1.75 0 016.5 7.75zM19 19h-3v-4.75c0-1.14-.02-2.6-1.58-2.6-1.58 0-1.83 1.24-1.83 2.52V19h-3V9h2.88v1.38h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.62V19z"/>
+      </svg>
+      <span class="text-current group-hover:text-black group-hover:dark:text-white blend">
+        LinkedIn Profile
+      </span>
+    </a>
+  </div>
+</TopLayout>
   <BottomLayout>
     <ul>
       { 
