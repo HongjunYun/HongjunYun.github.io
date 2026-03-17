@@ -9,12 +9,12 @@ tags:
 - First Year
 - "[KR]"
 slug: "03-uw-first-year-kr"
-canonicalUrl: "https://andylang8445.github.io/blog/uw-first-year-kr"
-audioUrl: "https://andylang8445.github.io/audio/blog03-first-year-audio-kr.mp3"
+canonicalUrl: "https://hongjunyun.github.io/blog/03-uw-first-year-kr"
+audioUrl: "https://hongjunyun.github.io/audio/blog03-first-year-audio-kr.mp3"
 readingTime: "11 min read"
-hreflangEn: "https://andylang8445.github.io/blog/uw-first-year"
-hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
-order: 1
+hreflangEn: "https://hongjunyun.github.io/blog/03-uw-first-year"
+hreflangKo: "https://hongjunyun.github.io/blog/03-uw-first-year-kr"
+order: 2
 ---
 
 ### Summary
@@ -280,9 +280,9 @@ Bring on Year 2.
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://andylang8445.github.io/blog/uw-first-year-kr"
+    "@id": "https://hongjunyun.github.io/blog/03-uw-first-year-kr"
   },
-  "headline": "First year at University of Waterloo: 12개월 생존기",
+  "headline": "워털루 ECE 1학년: 한국인 유학생 후기",
   "description": "캐나다 워털루 대학교 컴퓨터 공학과 1학년 유학생의 생생한 후기. 1A/1B 학기 수강 과목, 에어컨 없는 기숙사 생존기, 그리고 눈물겨운 두 번의 코업(Co-op) 구직 경험담을 담았습니다.",
   "author": {
     "@type": "Person",
@@ -294,7 +294,7 @@ Bring on Year 2.
   "inLanguage": "ko",
   "audio": {
     "@type": "AudioObject",
-    "contentUrl": "https://andylang8445.github.io/audio/blog03-first-year-audio-kr.mp3",
+    "contentUrl": "https://hongjunyun.github.io/audio/blog03-first-year-audio-kr.mp3",
     "encodingFormat": "audio/mpeg",
     "name": "오디오로 듣는 워털루 1학년 생존기",
     "duration": "PT8M30S" 

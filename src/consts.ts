@@ -76,8 +76,8 @@ export const SOCIALS: Socials = [
   { 
     NAME: "Github",
     ICON: "github",
-    TEXT: "andylang8445",
-    HREF: "https://github.com/andylang8445"
+    TEXT: "hongjunyun",
+    HREF: "https://github.com/hongjunyun"
   },
   { 
     NAME: "LinkedIn",

@@ -8,12 +8,12 @@ tags:
   - First Year
   - "[EN]"
 slug: "03-uw-first-year"
-canonicalUrl: "https://andylang8445.github.io/blog/uw-first-year"
-audioUrl: "https://andylang8445.github.io/audio/blog03-first-year-audio.mp3"
+canonicalUrl: "https://hongjunyun.github.io/blog/03-uw-first-year"
+audioUrl: "https://hongjunyun.github.io/audio/blog03-first-year-audio.mp3"
 readingTime: "10 min read"
-hreflangEn: "https://andylang8445.github.io/blog/uw-first-year"
-hreflangKo: "https://andylang8445.github.io/blog/uw-first-year-kr"
-order: 1
+hreflangEn: "https://hongjunyun.github.io/blog/03-uw-first-year"
+hreflangKo: "https://hongjunyun.github.io/blog/03-uw-first-year-kr"
+order: 2
 ---
 
 ### Summary
@@ -272,7 +272,7 @@ Hope this helps any future Warriors out there.
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://andylang8445.github.io/blog/03-uw-first-year"
+    "@id": "https://hongjunyun.github.io/blog/03-uw-first-year"
   },
   "headline": "First year at University of Waterloo: 12 months survival",
   "description": "University of Waterloo Computer Engineering year 1 story. 1A/1B term courses, dorm with no AC, and two co-op interviews.",
@@ -286,7 +286,7 @@ Hope this helps any future Warriors out there.
   "inLanguage": "en",
   "audio": {
     "@type": "AudioObject",
-    "contentUrl": "https://andylang8445.github.io/audio/blog03-first-year-audio.mp3",
+    "contentUrl": "https://hongjunyun.github.io/audio/blog03-first-year-audio.mp3",
     "encodingFormat": "audio/mpeg",
     "name": "Audible University of Waterloo 12 months survival story",
     "duration": "PT4M03S" 
