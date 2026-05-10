@@ -56,21 +56,51 @@ const next = items[(index + 1) % items.length]
     </a>
   </div>
   <div class="giscus-wrapper mt-12 mb-8">
-    <script is:inline src="https://giscus.app/client.js"
-            data-repo="hongjunyun/hongjunyun.github.io"
-            data-repo-id="MDEwOlJlcG9zaXRvcnkxNzg5MjAwNDI="
-            data-category="General"
-            data-category-id="DIC_kwDOCqoaas4C2-UB"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="preferred_color_scheme"
-            data-lang="ko"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
+    <script is:inline>
+      (function () {
+        function getTheme() {
+          return document.documentElement.classList.contains("dark") ? "dark" : "light";
+        }
+
+        function loadGiscus() {
+          // Remove existing giscus if re-navigating via View Transitions
+          const existing = document.querySelector(".giscus");
+          if (existing) existing.innerHTML = "";
+
+          const script = document.createElement("script");
+          script.src = "https://giscus.app/client.js";
+          script.setAttribute("data-repo", "hongjunyun/hongjunyun.github.io");
+          script.setAttribute("data-repo-id", "MDEwOlJlcG9zaXRvcnkxNzg5MjAwNDI=");
+          script.setAttribute("data-category", "General");
+          script.setAttribute("data-category-id", "DIC_kwDOCqoaas4C2-UB");
+          script.setAttribute("data-mapping", "pathname");
+          script.setAttribute("data-strict", "0");
+          script.setAttribute("data-reactions-enabled", "1");
+          script.setAttribute("data-emit-metadata", "0");
+          script.setAttribute("data-input-position", "top");
+          script.setAttribute("data-theme", getTheme());
+          script.setAttribute("data-lang", "ko");
+          script.setAttribute("data-loading", "lazy");
+          script.setAttribute("crossorigin", "anonymous");
+          script.async = true;
+          document.querySelector(".giscus-wrapper").appendChild(script);
+        }
+
+        // Sync giscus theme with page theme changes
+        const observer = new MutationObserver(function () {
+          const theme = getTheme();
+          const iframe = document.querySelector("iframe.giscus-frame");
+          if (iframe) {
+            iframe.contentWindow.postMessage(
+              { giscus: { setConfig: { theme } } },
+              "https://giscus.app"
+            );
+          }
+        });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+        loadGiscus();
+      })();
     </script>
   </div>
 </div>
