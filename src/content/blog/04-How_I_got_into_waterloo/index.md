@@ -2,7 +2,7 @@
 title: "How I Got Into Waterloo ECE as a Korean International Student"
 summary: "A personal record of getting into Waterloo Engineering after three years of high school in Canada — including the ECE Kira Talent interview and the ten minutes that changed everything."
 date: 2026-03-16T20:17:58
-updatedDate: 2026-03-18
+updatedDate: 2026-05-15
 draft: false
 tags:
   - UWaterloo
