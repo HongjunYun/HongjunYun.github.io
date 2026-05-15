@@ -202,7 +202,7 @@ Next up: the real Waterloo experience starts — **Co-op.**
     "name": "Andy Yun"
   },
   "datePublished": "2026-03-17T22:21:56+09:00",
-  "dateModified": "2026-03-17T22:21:56+09:00",
+  "dateModified": "2026-05-15T21:08:30+09:00",
   "timeRequired": "PT10M",
   "inLanguage": "en"
 }
