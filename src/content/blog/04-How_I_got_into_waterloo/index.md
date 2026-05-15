@@ -43,7 +43,7 @@ UW ECE wasn't some carefully planned goal from the start. My actual plan was to 
 
 My 12th grade English (ENG4U) was always a concern. I'd started in ESL D back in Grade 11, and a 70-something in Grade 11 English wasn't exactly confidence-inspiring. Luckily, I was prepping for IELTS a bit earlier at the time, so I somehow managed to land in the mid-high 80s.
 
-Grade 12 Physics was its own disaster. I dropped it the first time after a rough midterm, retook it with a stricter instructor, ground through lab reports and projects, and finished with a mid-80.
+Grade 12 Physics was its own disaster. I dropped it the first time after a rough midterm, retook it with a stricter instructor, ground through lab reports and projects, and finished with a mid-80s.
 
 The rest of my weak spots were covered by my stronger CS courses, which were sitting comfortably in the mid-to-high 90s.
 
@@ -60,12 +60,12 @@ For Waterloo ECE? Honestly, not the kind of number you'd bet on.
 With a safety school locked in (Mc and UAlberta), I wanted to coast through the rest of my applications.
 The school co-op program seemed perfect — one placement, 2 credits, done.
 
-Except no one wanted to hire me. Government offices didn't even read my resume after they found out I'm international.
+Except no one wanted to hire me. Government offices didn't even read my resume after they found out I was international.
 My co-op teacher ended up cold-emailing the owner of **The Hacksmith** — a well-known engineering YouTube channel — and somehow landed me an unpaid internship.
 
 **The Timbit Deal**
 
-The commute was the real problem. A 25-minute walk to the bus stop in the middle of a Canadian winter, or $30 each way by Uber. Neither was pleasing nor sustainable.
+The commute was the real problem. A 25-minute walk to the bus stop in the middle of a Canadian winter, or $30 each way by Uber. Neither was pleasant nor sustainable.
 
 My IT supervisor came up with a solution: bring a **$4.99 pack of 20 Timbits** every morning, and he'd drive me home after work. I said yes immediately.
 
@@ -89,9 +89,9 @@ As a Grade 12 student, I was running out of time. So I pitched an idea to the di
 
 What started as a casual side project turned into my first real encounter with AWS. I set up a Node.js and SQL server, but it couldn't handle even moderate traffic. It kept crashing, and at some point I started getting what looked like DOS attacks.
 
-I spent way too much time keeping the server alive then expected. It never really worked reliably enough for long-term use. But that was fine — I got my volunteer hours.
+I spent way too much time keeping the server alive than expected. It never really worked reliably enough for long-term use. But that was fine — I got my volunteer hours.
 <br/>
-More importantly, a story about debugging a server under pressure, which made for a much better AIF (Admission Information Form) essay than any project that actually worked.
+More importantly, I had a story about debugging a server under pressure, which made for a much better AIF (Admission Information Form) essay than any project that actually worked.
 
 ### Coding Competitions: NYPC and CCC
 
@@ -109,9 +109,9 @@ I also put down my math competition results: **Fermat, Hypatia, and Euclid**, ea
 
 For Waterloo's AIF (Admission Information Form), I wrote about **quantum computing** and referenced **Donna Strickland** — a Nobel Prize-winning physicist based at Waterloo.
 
-My Grade 12 Physics report happened to be on quantum computing. While researching, I came across the fact that a Waterloo professor recently(at the time of application) had won the Nobel Prize in Physics for related work. I wove that into my essay — read some of her papers (understood maybe 10% of it at the most), ran a demo on IBM's quantum computer, and built my argument around that.
+My Grade 12 Physics report happened to be on quantum computing. While researching, I came across the fact that a Waterloo professor recently (at the time of application) had won the Nobel Prize in Physics for related work. I wove that into my essay — read some of her papers (understood maybe 10% of them at the most), ran a demo on IBM's quantum computer, and built my argument around that.
 
-In hindsight, there was a glaring gap in my process. I dug through academic papers for my essay, but I never once looked at Waterloo's official "what we look for in applicants" page. I didn't even know it existed until well after I enrolled. Looking back, I have no idea how I got in. I just scribbled whatever I wanted them to see from my essay.
+In hindsight, there was a glaring gap in my process. I dug through academic papers for my essay, but I never once looked at Waterloo's official "what we look for in applicants" page. I didn't even know it existed until well after I enrolled. Looking back, I have no idea how I got in. I just scribbled whatever I wanted them to see in my essay.
 
 > Check the official admissions criteria before you write a single word of your AIF. I didn't. Don't be me.
 
@@ -170,7 +170,7 @@ My roommates and I often went to Tim Hortons for Lemonade Chills, took walks, an
 
 Looking back, nothing about my path to Waterloo was carefully planned. A shaky grade average, an accidental portfolio, a physics report that happened to mention a Nobel laureate at the right school. It all somehow added up.
 
-> Anything you do towards your dream will definitely help you someday
+> Anything you do towards your dream will definitely help you someday.
 
 Next up: the real Waterloo experience starts — **Co-op.**
 
