@@ -8,10 +8,11 @@ tags:
   - AssistiveTech
   - Project
   - HCI
+  - "[개발로그]"
   - "[KR]"
 slug: "06-devlog_assistive_communication_device"
 canonicalUrl: "https://hongjunyun.github.io/blog/06-devlog_assistive_communication_device"
-readingTime: "5 min read"
+readingTime: "50 min read"
 ---
 
 ### Summary
