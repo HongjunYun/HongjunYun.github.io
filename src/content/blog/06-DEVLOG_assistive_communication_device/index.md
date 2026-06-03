@@ -12,7 +12,7 @@ tags:
   - "[KR]"
 slug: "06-devlog_assistive_communication_device"
 canonicalUrl: "https://hongjunyun.github.io/blog/06-devlog_assistive_communication_device"
-readingTime: "50 min read"
+readingTime: "5 min read"
 ---
 
 ### Summary
@@ -49,11 +49,11 @@ readingTime: "50 min read"
 
 > **해당 키보드가 아직 시장에 존재하지 않는다면, 이에 대해 연구하고 있을 것**
 
-이라는 생각이 들어 논문을 찾아보았다. 대표적으로 [컴퓨터 키보드의 한글배열연구](https://www.korean.go.kr/front/reportData/reportDataView.do?mn_id=207&searchOrder=years&report_seq=391&pageIndex=1), [손가락 피로도를 고려한 유전 알고리즘 기반 한글 두벌식 키보드의 자판 배열 최적화](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003095694), [사용빈도와 표준정합성을 고려한 컴퓨터 한글자판의 개선에 관한 연구](https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=JAKO200816049040476), [근육장애인을 위한 맞춤형 대체키보드 개발 및 평가](https://www.dbpia.co.kr/journal/detail?nodeId=T16943473) 등 여러 논문을 이해하려고 노력하였고, 내가 이해한 바에 따르면 나와 같은 목표를 가진 연구는 없다고 이해했다.
+이라는 생각이 들어 논문을 찾아보았다. 대표적으로 [[컴퓨터 키보드의 한글배열연구]](https://www.korean.go.kr/front/reportData/reportDataView.do?mn_id=207&searchOrder=years&report_seq=391&pageIndex=1), [[손가락 피로도를 고려한 유전 알고리즘 기반 한글 두벌식 키보드의 자판 배열 최적화]](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003095694), [[사용빈도와 표준정합성을 고려한 컴퓨터 한글자판의 개선에 관한 연구]](https://scienceon.kisti.re.kr/srch/selectPORSrchArticle.do?cn=JAKO200816049040476), [[근육장애인을 위한 맞춤형 대체키보드 개발 및 평가]](https://www.dbpia.co.kr/journal/detail?nodeId=T16943473) 등 여러 논문을 이해하려고 노력하였고, 내가 이해한 바에 따르면 나와 같은 목표를 가진 연구는 없다고 이해했다.
 
 **만약 이미 발명되어서 아무도 연구하지 않는 것이라면?**
 
-이 또한 특허 검색을 통해 알아보았다. [노인 및 장애우들을 위한 쉽게 조작하는 키보드](https://patents.google.com/patent/KR20130006861U/ko). 처음에는 동일한 목표의 장치인 줄 알고 해당 특허를 더 읽어보았다. 언뜻 보기에는 거의 동일한 목적의 키보드이지만, 타겟과 해결하고자 하는 문제가 달랐다.
+이 또한 특허 검색을 통해 알아보았다. [[노인 및 장애우들을 위한 쉽게 조작하는 키보드]](https://patents.google.com/patent/KR20130006861U/ko). 처음에는 동일한 목표의 장치인 줄 알고 해당 특허를 더 읽어보았다. 언뜻 보기에는 거의 동일한 목적의 키보드이지만, 타겟과 해결하고자 하는 문제가 달랐다.
 
 이에 따라 내 목표에 맞는 키보드를 개발하기로 했다. 다음 질문은 자연스럽게 *"키보드를 개발한다면, 어디에 연결해서 쓸 것인가?"*가 된다.
 
