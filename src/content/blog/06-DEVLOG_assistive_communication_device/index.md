@@ -3,7 +3,7 @@ title: "[개발로그] 맞춤형 소통 단말기 개발 — 1. 요구사항과 
 summary: "2026년 여름, 새로운 도전. 그 첫 이야기"
 date: 2026-05-31T00:24:56
 updatedDate: 2026-06-03
-draft: true
+draft: false
 tags:
   - AssistiveTech
   - Project
