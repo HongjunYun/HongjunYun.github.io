@@ -1,0 +1,18 @@
+# 모든 소스 파일의 저장소 줄바꿈을 LF로 통일
+* text=auto eol=lf
+
+# Windows 전용 스크립트가 생길 경우 CRLF 유지
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# 바이너리 파일
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary

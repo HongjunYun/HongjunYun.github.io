@@ -15,7 +15,7 @@ COPY package*.json ./
 
 # 4. 핵심: 컨테이너 내부(Linux) 환경에 맞춰서 직접 설치
 # 이렇게 하면 Mac용 부품이 아닌 Linux용 Rollup 부품이 깔립니다.
-RUN npm install
+RUN npm ci
 
 # 5. 나머지 소스 코드 복사
 COPY . .

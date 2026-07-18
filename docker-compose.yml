@@ -1,9 +1,28 @@
 services:
   blog:
-    build: .          # image: node... 대신 이걸 써야 Dockerfile을 읽습니다.
+    build:
+      context: .
+      dockerfile: Dockerfile
+
     working_dir: /app
+    init: true
+
+    environment:
+      DOCKER_DEV: "true"
+
     volumes:
-      - .:/app
-      - /app/node_modules # 로컬 Mac의 부품이 안으로 침범하지 못하게 방어
+      # Windows와 Mac의 현재 프로젝트 폴더 연결
+      - type: bind
+        source: .
+        target: /app
+
+      # Linux 컨테이너용 node_modules 분리
+      - type: volume
+        source: blog_node_modules
+        target: /app/node_modules
+
     ports:
       - "4321:4321"
+
+volumes:
+  blog_node_modules:
