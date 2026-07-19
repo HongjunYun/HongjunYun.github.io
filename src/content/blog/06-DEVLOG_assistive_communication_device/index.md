@@ -97,6 +97,10 @@ readingTime: "5 min read"
 
 ---
 
+[[목록으로 돌아가기]](/projects/06-acc_device_development/)
+
+---
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
