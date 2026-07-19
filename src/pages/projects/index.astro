@@ -80,11 +80,22 @@ const sortedCategories = Object.keys(groupedProjects).sort(
                   
                   {/* ✨ 날짜 추가 (mt-auto로 항상 맨 아래 고정) */}
                   <div class="text-xs opacity-50 mt-auto pt-2">
-                    {project.data.date.toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'short', 
-                      day: 'numeric' 
+                    Started {project.data.date.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
                     })}
+
+                    {project.data.updatedDate && (
+                      <>
+                        {" · Updated "}
+                        {project.data.updatedDate.toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </>
+                    )}
                   </div>
                 </a>
               </li>
