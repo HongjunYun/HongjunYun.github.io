@@ -87,7 +87,7 @@ AliExpress에서 조건에 맞는 제품을 찾던 중 Waveshare의 `ESP32-S3-To
 
 <div style="width: 100%; max-width: 1000px; margin: 0 auto;">
 
-![Aliexpress 구매내역](./ali-purchase-history.png)
+![AliExpress에서 구매한 Waveshare ESP32-S3-Touch-LCD-7B 구매 내역](./ali-purchase-history.png)
 
 </div>
 
