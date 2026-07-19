@@ -14,8 +14,13 @@ const posts = (await getCollection("blog"))
 
 const projects = (await getCollection("projects"))
   .filter(project => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0,3)
+  .sort((a, b) => {
+    const dateA = a.data.updatedDate ?? a.data.date
+    const dateB = b.data.updatedDate ?? b.data.date
+
+    return dateB.getTime() - dateA.getTime()
+  })
+  .slice(0, 3)
 
 const stack = [
   { 
@@ -89,6 +94,21 @@ const stack = [
     href: "https://nodejs.org"
   },
   {
+    text: "ESP32",
+    icon: "espressif",
+    href: "https://www.espressif.com/"
+  },
+  {
+    text: "ESP-IDF",
+    icon: "espressif",
+    href: "https://docs.espressif.com/projects/esp-idf/"
+  },
+  {
+    text: "LVGL",
+    icon: "lvgl",
+    href: "https://lvgl.io/"
+  },
+  {
     text: "and more",
     icon: "ellipsis",
     href: "#"
@@ -139,10 +159,10 @@ const stack = [
             Hello, I am Andy Yun.
           </p>
           <p class='animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white'>
-            UWaterloo Computer Engineering Student
+            Computer Engineering Student at UWaterloo
           </p>
           <p class='animated text-sm md:text-base lg:text-lg opacity-75'>
-            Currently designing products for humans.
+            Building human-centered embedded systems and assistive technology.
           </p>
           <div id="ctaButtons" class='animated flex flex-wrap gap-4 justify-center mt-5'>
             <a href='/work' class='py-2 px-4 rounded truncate text-xs md:text-sm lg:text-base border border-black/25 dark:border-white/25 hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black transition-colors duration-300 ease-in-out'>
@@ -173,28 +193,46 @@ const stack = [
       <section class="animate">
         <article class="space-y-4 text-justify">
           <p>
-            I am a <b>Computer Engineering student</b> at the <b>University of Waterloo</b> (completed 3A term). Currently, I am fulfilling my mandatory military service in the <b>Republic of Korea Armed Forces</b>.
-          </p>
-          
-          <p>
-            <b>Professional Journey: From FinTech to 6G</b>
-          </p>
-          <p>
-            My engineering path is defined by diverse technical challenges. Most recently, I worked as a <b>Student Intern at Korea Fund Ratings</b>, leveraging <b>Python and Machine Learning</b> for financial data validation. Prior to that, I built scalable backend systems at <b>Escape Platforms Inc.</b> using <b>AWS (Lambda, DynamoDB)</b> and Node.js.
-          </p>
-          <p>
-            My research capability was honed at <b>Huawei Ottawa R&D Centre</b> as a <b>6G Researcher</b>, where I simulated next-gen networks using C++ and Python. I also gained industrial software experience at <b>Stackpole International</b> (automotive manufacturing) and started my journey at <b>The Hacksmith</b>, contributing to creative engineering projects with C++ and Node.js.
+            I am a <b>Computer Engineering student at the University of Waterloo</b>,
+            where I completed my 3A term before taking a leave of absence.
+            My interests span embedded systems, human-computer interaction,
+            backend infrastructure, and applied machine learning.
           </p>
 
           <p>
-            <b>Current Focus: The Barracks R&D</b>
-          </p>
-          <p>
-            Even while serving in the military, my passion for engineering remains active. During my off-duty hours, I am developing an <b>AI-powered market analysis engine</b>. This personal project allows me to synthesize my experience in <b>financial data (Korea Fund Ratings)</b> and <b>backend architecture (Escape Platforms)</b> to build a sophisticated system using <b>Python and PyTorch</b>.
+            <b>Current Focus: Assistive Communication Technology</b>
           </p>
 
           <p>
-            Whether I'm optimizing a 6G simulation or architecting a cloud backend, I am driven by the same goal: <b>to build robust systems that solve real problems.</b>
+            I am currently developing a customized <b>assistive communication device</b>
+            for a user who cannot rely on speech or conventional handwriting.
+            The system combines a dedicated USB HID keyboard with an
+            <b>ESP32-S3-based display device</b>, Korean text input,
+            and future wireless communication with a caregiver-facing receiver.
+          </p>
+
+          <p>
+            The project requires work across embedded firmware, hardware design,
+            accessibility, and interface design. I am documenting the requirements,
+            engineering decisions, prototypes, and failures through an ongoing
+            development log.
+          </p>
+
+          <p>
+            <b>Professional Experience</b>
+          </p>
+
+          <p>
+            My previous experience includes financial data and machine learning at
+            <b>Korea Fund Ratings</b>, backend systems using AWS and Node.js at
+            <b>Escape Platforms</b>, 6G research at <b>Huawei Ottawa R&amp;D Centre</b>,
+            industrial software at <b>Stackpole International</b>, and creative
+            engineering projects at <b>The Hacksmith</b>.
+          </p>
+
+          <p>
+            I am driven by a consistent goal:
+            <b>to build technically sound systems around real human needs.</b>
           </p>
         </article>
       </section>
@@ -226,7 +264,7 @@ const stack = [
       <section class="animate">
         <div class="space-y-4">
           <p class="font-semibold text-black dark:text-white">
-            Still Stack
+            Tech Stack
           </p>
           <div class="flex flex-wrap items-center gap-2 mt-5">
             {stack.map(item => (
@@ -292,6 +330,7 @@ const stack = [
                 </a>
               </div>
             ))}
+        </div>
         </div>
       </section>
     </div>

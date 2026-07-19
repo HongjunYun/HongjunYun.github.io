@@ -7,8 +7,13 @@ import { PROJECTS } from "@consts";
 
 // 1. 프로젝트 데이터 가져오기
 const projects = (await getCollection("projects"))
-  .filter((project) => !project.data.draft)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  .filter(project => !project.data.draft)
+  .sort((a, b) => {
+    const dateA = a.data.updatedDate ?? a.data.date
+    const dateB = b.data.updatedDate ?? b.data.date
+
+    return dateB.getTime() - dateA.getTime()
+  })
 
 // 2. 카테고리별 그룹핑
 const groupedProjects = projects.reduce((acc, project) => {
@@ -21,11 +26,19 @@ const groupedProjects = projects.reduce((acc, project) => {
 }, {} as Record<string, typeof projects>);
 
 // 3. 카테고리 정렬 (최신 프로젝트 순)
-const sortedCategories = Object.keys(groupedProjects).sort((categoryA, categoryB) => {
-  const latestProjectA = groupedProjects[categoryA][0];
-  const latestProjectB = groupedProjects[categoryB][0];
-  return latestProjectB.data.date.getTime() - latestProjectA.data.date.getTime();
-});
+const sortedCategories = Object.keys(groupedProjects).sort(
+  (categoryA, categoryB) => {
+    const latestProjectA = groupedProjects[categoryA][0]
+    const latestProjectB = groupedProjects[categoryB][0]
+
+    const dateA =
+      latestProjectA.data.updatedDate ?? latestProjectA.data.date
+    const dateB =
+      latestProjectB.data.updatedDate ?? latestProjectB.data.date
+
+    return dateB.getTime() - dateA.getTime()
+  }
+)
 ---
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
